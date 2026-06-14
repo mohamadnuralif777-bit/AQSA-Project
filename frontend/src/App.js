@@ -9,6 +9,7 @@ import Library from "@/pages/Library";
 import Viewer from "@/pages/Viewer";
 import Dashboard from "@/pages/Dashboard";
 import Admin from "@/pages/Admin";
+import About from "@/pages/About";
 import { Toaster } from "@/components/ui/sonner";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/about" element={<About />} />
             <Route path="/library" element={<Library />} />
             <Route path="/viewer/:id" element={<ProtectedRoute><Viewer /></ProtectedRoute>} />
             <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />

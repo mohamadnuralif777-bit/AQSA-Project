@@ -29,14 +29,14 @@ export default function Register() {
         <div className="relative h-full p-16 flex flex-col justify-between text-white">
           <Link to="/" className="flex items-center gap-3">
             <div className="h-11 w-11 rounded-2xl bg-gold text-emerald-900 grid place-items-center font-arabic text-lg">ا</div>
-            <span className="font-heading text-lg">Iqro' Interaktif</span>
+            <span className="font-heading text-lg">AQSA Study Community</span>
           </Link>
           <div>
             <div className="font-arabic text-6xl text-gold mb-6 leading-tight">طَلَبُ الْعِلْم</div>
             <h2 className="font-heading text-4xl leading-tight max-w-md">"Menuntut ilmu adalah kewajiban bagi setiap muslim."</h2>
             <p className="text-emerald-100/80 mt-3 text-sm">HR. Ibnu Majah</p>
           </div>
-          <p className="text-emerald-100/70 text-sm">© {new Date().getFullYear()} Iqro' Interaktif</p>
+          <p className="text-emerald-100/70 text-sm">© {new Date().getFullYear()} AQSA Study Community</p>
         </div>
       </div>
 

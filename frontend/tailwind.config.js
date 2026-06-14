@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        heading: ['Fraunces', 'serif'],
-        sans: ['Manrope', 'system-ui', 'sans-serif'],
+        heading: ['Comic Sans MS', 'Comic Sans', 'Chalkboard SE', 'Trebuchet MS', 'sans-serif'],
+        sans: ['Comic Sans MS', 'Comic Sans', 'Chalkboard SE', 'Trebuchet MS', 'sans-serif'],
         arabic: ['Amiri', 'serif'],
       },
       borderRadius: {

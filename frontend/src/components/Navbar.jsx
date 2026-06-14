@@ -1,7 +1,8 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
-import { LogOut, BookOpen, LayoutDashboard, Shield } from "lucide-react";
+import Logo from "@/components/Logo";
+import { LogOut, BookOpen, LayoutDashboard, Shield, Info } from "lucide-react";
 
 export default function Navbar() {
   const { user, logout } = useAuth();
@@ -15,16 +16,17 @@ export default function Navbar() {
     <nav data-testid="navbar" className="sticky top-0 z-50 glass border-b border-sand-200">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
         <Link to="/" data-testid="navbar-logo" className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-2xl bg-emerald-800 text-white grid place-items-center font-arabic text-lg shadow-sm">
-            ا
-          </div>
+          <Logo size={44} />
           <div className="leading-tight">
-            <div className="font-heading text-lg text-emerald-900">Iqro' Interaktif</div>
-            <div className="text-[11px] uppercase tracking-[0.18em] text-stone-500">Belajar Membaca Al-Qur'an</div>
+            <div className="font-heading text-lg text-emerald-900">AQSA Study Community</div>
+            <div className="text-[11px] uppercase tracking-[0.18em] text-stone-500">Al-Qur'an &amp; Sunnah</div>
           </div>
         </Link>
 
         <div className="hidden md:flex items-center gap-2 text-sm">
+          <Link to="/about" data-testid="nav-about" className={`px-4 py-2 rounded-full transition-colors ${isActive("/about") ? "bg-emerald-800 text-white" : "text-stone-700 hover:bg-sand-100"}`}>
+            <Info className="inline h-4 w-4 mr-1.5" /> Tentang
+          </Link>
           <Link to="/library" data-testid="nav-library" className={`px-4 py-2 rounded-full transition-colors ${isActive("/library") ? "bg-emerald-800 text-white" : "text-stone-700 hover:bg-sand-100"}`}>
             <BookOpen className="inline h-4 w-4 mr-1.5" /> Perpustakaan
           </Link>
