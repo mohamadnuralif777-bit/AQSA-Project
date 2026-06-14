@@ -16,6 +16,7 @@ export default function Admin() {
   const [stats, setStats] = useState({ users: 0, materials: 0, available: 0, comments: 0 });
 
   // Upload form
+  const [category, setCategory] = useState("iqro");
   const [volume, setVolume] = useState(1);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -47,7 +48,7 @@ export default function Admin() {
   };
 
   const resetForm = () => {
-    setVolume(1); setTitle(""); setDescription(""); setHtmlContent(""); setIsLocked(false); setEditId(null); setMsg("");
+    setCategory("iqro"); setVolume(1); setTitle(""); setDescription(""); setHtmlContent(""); setIsLocked(false); setEditId(null); setMsg("");
   };
 
   const onSubmit = async (e) => {
@@ -65,7 +66,7 @@ export default function Admin() {
         await api.put(`/materials/${editId}`, payload);
         setMsg("Materi berhasil diperbarui.");
       } else {
-        await api.post("/materials", { volume: Number(volume), title, description, html_content: htmlContent, is_locked: isLocked });
+        await api.post("/materials", { category, volume: Number(volume), title, description, html_content: htmlContent, is_locked: isLocked });
         setMsg("Materi berhasil disimpan.");
       }
       resetForm();
@@ -77,6 +78,7 @@ export default function Admin() {
 
   const onEdit = async (m) => {
     setEditId(m.id);
+    setCategory(m.category || "iqro");
     setVolume(m.volume);
     setTitle(m.title);
     setDescription(m.description || "");
@@ -126,9 +128,16 @@ export default function Admin() {
             <form onSubmit={onSubmit} className="rounded-3xl bg-white border border-sand-200 p-6 lg:p-8 space-y-5" data-testid="admin-material-form">
               <h3 className="font-heading text-2xl text-stone-900">{editId ? "Edit Materi" : "Tambah / Ganti Materi"}</h3>
               {msg && <div className="text-sm px-4 py-3 rounded-2xl bg-emerald-50 text-emerald-900 border border-emerald-100">{msg}</div>}
-              <div className="grid md:grid-cols-3 gap-4">
+              <div className="grid md:grid-cols-4 gap-4">
                 <div>
-                  <Label>Jilid (1-6)</Label>
+                  <Label>Kategori</Label>
+                  <select data-testid="admin-category-select" value={category} onChange={e => setCategory(e.target.value)} disabled={!!editId} className="w-full rounded-2xl bg-white border border-sand-200 h-11 px-3 text-sm">
+                    <option value="iqro">Iqro'</option>
+                    <option value="tajwid">Belajar Tajwid</option>
+                  </select>
+                </div>
+                <div>
+                  <Label>Jilid / No.</Label>
                   <Input data-testid="admin-volume-input" type="number" min={1} max={20} value={volume} onChange={e => setVolume(e.target.value)} disabled={!!editId} className="rounded-2xl bg-white border-sand-200 h-11" />
                 </div>
                 <div className="md:col-span-2">
@@ -164,7 +173,8 @@ export default function Admin() {
               <table className="w-full text-sm">
                 <thead className="bg-sand-50 border-b border-sand-200 text-left">
                   <tr>
-                    <th className="px-6 py-3 font-medium text-stone-600">Jilid</th>
+                    <th className="px-6 py-3 font-medium text-stone-600">Kategori</th>
+                    <th className="px-6 py-3 font-medium text-stone-600">No.</th>
                     <th className="px-6 py-3 font-medium text-stone-600">Judul</th>
                     <th className="px-6 py-3 font-medium text-stone-600">Status</th>
                     <th className="px-6 py-3 text-right font-medium text-stone-600">Aksi</th>
@@ -173,14 +183,19 @@ export default function Admin() {
                 <tbody>
                   {materials.map(m => (
                     <tr key={m.id} className="border-b border-sand-200 last:border-0">
+                      <td className="px-6 py-4">
+                        <span className={`text-xs px-2.5 py-1 rounded-full ${(m.category || "iqro") === "tajwid" ? "bg-terracotta/15 text-terracotta" : "bg-emerald-50 text-emerald-800"}`}>
+                          {(m.category || "iqro") === "tajwid" ? "Tajwid" : "Iqro'"}
+                        </span>
+                      </td>
                       <td className="px-6 py-4 font-heading text-lg text-emerald-800">{m.volume}</td>
                       <td className="px-6 py-4">{m.title}</td>
                       <td className="px-6 py-4">
                         <span className={`text-xs px-2.5 py-1 rounded-full ${m.is_locked ? "bg-stone-100 text-stone-600" : "bg-emerald-50 text-emerald-800"}`}>{m.is_locked ? "Terkunci" : "Tersedia"}</span>
                       </td>
                       <td className="px-6 py-4 text-right">
-                        <Button data-testid={`admin-edit-${m.volume}`} size="sm" variant="ghost" onClick={() => onEdit(m)} className="rounded-full"><Pencil className="h-4 w-4" /></Button>
-                        <Button data-testid={`admin-delete-${m.volume}`} size="sm" variant="ghost" onClick={() => onDelete(m)} className="rounded-full text-red-600 hover:bg-red-50"><Trash2 className="h-4 w-4" /></Button>
+                        <Button data-testid={`admin-edit-${m.category || "iqro"}-${m.volume}`} size="sm" variant="ghost" onClick={() => onEdit(m)} className="rounded-full"><Pencil className="h-4 w-4" /></Button>
+                        <Button data-testid={`admin-delete-${m.category || "iqro"}-${m.volume}`} size="sm" variant="ghost" onClick={() => onDelete(m)} className="rounded-full text-red-600 hover:bg-red-50"><Trash2 className="h-4 w-4" /></Button>
                       </td>
                     </tr>
                   ))}

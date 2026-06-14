@@ -21,7 +21,8 @@ export default function Dashboard() {
   }, []);
 
   const progressMap = Object.fromEntries(progress.map(p => [p.material_id, p]));
-  const totalPercent = progress.length > 0 ? Math.round(progress.reduce((a, p) => a + p.percent, 0) / 6) : 0;
+  const totalCount = materials.length || 1;
+  const totalPercent = materials.length > 0 ? Math.round(progress.reduce((a, p) => a + p.percent, 0) / totalCount) : 0;
   const completed = progress.filter(p => p.percent >= 100).length;
   const inProgress = progress.filter(p => p.percent > 0 && p.percent < 100).length;
 
@@ -48,8 +49,8 @@ export default function Dashboard() {
           </div>
           <div className="rounded-3xl p-8 bg-white border border-sand-200">
             <Award className="h-6 w-6 mb-3 text-terracotta" />
-            <div className="text-xs uppercase tracking-[0.2em] text-stone-500 mb-2">Jilid Selesai</div>
-            <div className="font-heading text-6xl text-stone-900 leading-none">{completed}<span className="text-2xl text-stone-400">/6</span></div>
+            <div className="text-xs uppercase tracking-[0.2em] text-stone-500 mb-2">Materi Selesai</div>
+            <div className="font-heading text-6xl text-stone-900 leading-none">{completed}<span className="text-2xl text-stone-400">/{materials.length || 0}</span></div>
           </div>
           <div className="rounded-3xl p-8 bg-white border border-sand-200">
             <BookMarked className="h-6 w-6 mb-3 text-emerald-800" />
@@ -64,10 +65,15 @@ export default function Dashboard() {
           {materials.map(m => {
             const p = progressMap[m.id];
             return (
-              <div key={m.id} data-testid={`dashboard-material-${m.volume}`} className="rounded-3xl bg-white border border-sand-200 p-5 flex flex-wrap items-center gap-4">
-                <div className={`h-12 w-12 rounded-2xl grid place-items-center font-heading text-lg flex-shrink-0 ${m.is_locked ? "bg-stone-200 text-stone-500" : "bg-emerald-800 text-white"}`}>{m.volume}</div>
+              <div key={m.id} data-testid={`dashboard-material-${m.category || "iqro"}-${m.volume}`} className="rounded-3xl bg-white border border-sand-200 p-5 flex flex-wrap items-center gap-4">
+                <div className={`h-12 w-12 rounded-2xl grid place-items-center font-heading text-lg flex-shrink-0 ${m.is_locked ? "bg-stone-200 text-stone-500" : ((m.category || "iqro") === "tajwid" ? "bg-terracotta text-white" : "bg-emerald-800 text-white")}`}>{m.volume}</div>
                 <div className="flex-1 min-w-[180px]">
-                  <div className="font-medium text-stone-900">{m.title}</div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="font-medium text-stone-900">{m.title}</span>
+                    <span className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full ${(m.category || "iqro") === "tajwid" ? "bg-terracotta/15 text-terracotta" : "bg-emerald-50 text-emerald-800"}`}>
+                      {(m.category || "iqro") === "tajwid" ? "Tajwid" : "Iqro'"}
+                    </span>
+                  </div>
                   <div className="text-xs text-stone-500">{m.is_locked ? "Belum tersedia" : (p ? `${p.percent}% selesai` : "Belum dimulai")}</div>
                 </div>
                 <div className="w-full md:w-48"><Progress value={p?.percent || 0} className="h-2" /></div>

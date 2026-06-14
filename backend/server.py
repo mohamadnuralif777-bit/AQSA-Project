@@ -204,8 +204,11 @@ async def seed_admin():
 
 
 async def seed_materials():
-    """Seed Iqro 1–6 placeholders and load Iqro 5 & 6 HTML from /app/iqro5.html, /app/iqro6.html if present."""
-    titles = {
+    """Seed Iqro 1–6 placeholders and Tajwid placeholders."""
+    # Migration: add 'category' to any existing materials without it
+    await db.materials.update_many({"category": {"$exists": False}}, {"$set": {"category": "iqro"}})
+
+    iqro_titles = {
         1: ("Iqro' Jilid 1", "Pengenalan huruf hijaiyah berbaris fathah."),
         2: ("Iqro' Jilid 2", "Huruf bersambung dan baris fathah panjang."),
         3: ("Iqro' Jilid 3", "Tanda baca kasrah dan dhammah."),
@@ -213,23 +216,34 @@ async def seed_materials():
         5: ("Iqro' Jilid 5", "Tajwid dasar: mad, waqaf, dan tanda baca lanjut."),
         6: ("Iqro' Jilid 6", "Penyempurnaan bacaan dan kaidah tajwid."),
     }
+    tajwid_titles = {
+        1: ("Tajwid Dasar: Makharijul Huruf", "Pengenalan tempat keluarnya huruf hijaiyah."),
+        2: ("Hukum Nun Sukun & Tanwin", "Idzhar, Idgham, Iqlab, dan Ikhfa."),
+        3: ("Hukum Mim Sukun", "Idgham Mitslain, Ikhfa Syafawi, dan Idzhar Syafawi."),
+        4: ("Hukum Mad", "Mad Thabi'i dan ragam Mad far'i."),
+        5: ("Qalqalah & Waqaf", "Qalqalah sughra/kubra dan tanda-tanda waqaf."),
+        6: ("Lam Ta'rif & Ra'", "Hukum bacaan Lam Ta'rif dan tafkhim/tarqiq pada Ra'."),
+    }
+
     base = Path("/app")
-    for vol in range(1, 7):
-        existing = await db.materials.find_one({"volume": vol})
+
+    async def ensure(category: str, vol: int, title: str, desc: str, html_filename: Optional[str] = None):
+        existing = await db.materials.find_one({"category": category, "volume": vol})
         if existing:
-            continue
-        title, desc = titles[vol]
+            return
         html_content = ""
         is_locked = True
-        candidate = base / f"iqro{vol}.html"
-        if candidate.exists():
-            try:
-                html_content = candidate.read_text(encoding="utf-8")
-                is_locked = False
-            except Exception as e:
-                logger.warning(f"Failed to read {candidate}: {e}")
+        if html_filename:
+            candidate = base / html_filename
+            if candidate.exists():
+                try:
+                    html_content = candidate.read_text(encoding="utf-8")
+                    is_locked = False
+                except Exception as e:
+                    logger.warning(f"Failed to read {candidate}: {e}")
         await db.materials.insert_one({
             "id": str(uuid.uuid4()),
+            "category": category,
             "volume": vol,
             "title": title,
             "description": desc,
@@ -237,13 +251,29 @@ async def seed_materials():
             "is_locked": is_locked,
             "created_at": datetime.now(timezone.utc).isoformat(),
         })
-        logger.info(f"Seeded material vol {vol} (locked={is_locked})")
+        logger.info(f"Seeded {category} vol {vol} (locked={is_locked})")
+
+    for vol, (title, desc) in iqro_titles.items():
+        await ensure("iqro", vol, title, desc, f"iqro{vol}.html" if vol in (5, 6) else None)
+    for vol, (title, desc) in tajwid_titles.items():
+        await ensure("tajwid", vol, title, desc, None)
 
 
 async def ensure_indexes():
     await db.users.create_index("email", unique=True)
     await db.users.create_index("id", unique=True)
-    await db.materials.create_index("volume", unique=True)
+    # Drop legacy unique-on-volume index if present (replaced by compound category+volume index)
+    try:
+        info = await db.materials.index_information()
+        for name, spec in info.items():
+            if name == "_id_":
+                continue
+            keys = spec.get("key", [])
+            if keys == [("volume", 1)] and spec.get("unique"):
+                await db.materials.drop_index(name)
+    except Exception as e:
+        logger.warning(f"Index migration: {e}")
+    await db.materials.create_index([("category", 1), ("volume", 1)], unique=True)
     await db.materials.create_index("id", unique=True)
     await db.progress.create_index([("user_id", 1), ("material_id", 1)], unique=True)
     await db.comments.create_index("material_id")
@@ -337,9 +367,12 @@ async def refresh_token_endpoint(request: Request, response: Response):
 
 # ── Materials
 @api.get("/materials", response_model=List[MaterialSummary])
-async def list_materials():
-    docs = await db.materials.find({}, {"_id": 0, "html_content": 0}).sort("volume", 1).to_list(50)
-    return [MaterialSummary(**d) for d in docs]
+async def list_materials(category: Optional[str] = None):
+    query = {}
+    if category:
+        query["category"] = category
+    docs = await db.materials.find(query, {"_id": 0, "html_content": 0}).sort([("category", 1), ("volume", 1)]).to_list(100)
+    return [MaterialSummary(**{**d, "category": d.get("category", "iqro")}) for d in docs]
 
 
 @api.get("/materials/{material_id}", response_model=MaterialFull)
@@ -354,19 +387,19 @@ async def get_material(material_id: str, user=Depends(get_current_user)):
 
 @api.post("/materials", response_model=MaterialSummary)
 async def create_material(payload: MaterialIn, admin=Depends(require_admin)):
-    existing = await db.materials.find_one({"volume": payload.volume})
+    existing = await db.materials.find_one({"category": payload.category, "volume": payload.volume})
     if existing:
-        # update existing
-        await db.materials.update_one({"volume": payload.volume}, {"$set": {
+        await db.materials.update_one({"id": existing["id"]}, {"$set": {
             "title": payload.title,
             "description": payload.description or "",
             "html_content": payload.html_content,
             "is_locked": payload.is_locked,
         }})
-        doc = await db.materials.find_one({"volume": payload.volume}, {"_id": 0, "html_content": 0})
-        return MaterialSummary(**doc)
+        doc = await db.materials.find_one({"id": existing["id"]}, {"_id": 0, "html_content": 0})
+        return MaterialSummary(**{**doc, "category": doc.get("category", "iqro")})
     doc = {
         "id": str(uuid.uuid4()),
+        "category": payload.category,
         "volume": payload.volume,
         "title": payload.title,
         "description": payload.description or "",
@@ -375,7 +408,7 @@ async def create_material(payload: MaterialIn, admin=Depends(require_admin)):
         "created_at": datetime.now(timezone.utc).isoformat(),
     }
     await db.materials.insert_one(doc)
-    return MaterialSummary(**{k: doc[k] for k in ("id", "volume", "title", "description", "is_locked", "created_at")})
+    return MaterialSummary(**{k: doc[k] for k in ("id", "category", "volume", "title", "description", "is_locked", "created_at")})
 
 
 @api.put("/materials/{material_id}", response_model=MaterialSummary)
@@ -387,7 +420,7 @@ async def update_material(material_id: str, payload: MaterialUpdate, admin=Depen
     if result.matched_count == 0:
         raise HTTPException(status_code=404, detail="Materi tidak ditemukan")
     doc = await db.materials.find_one({"id": material_id}, {"_id": 0, "html_content": 0})
-    return MaterialSummary(**doc)
+    return MaterialSummary(**{**doc, "category": doc.get("category", "iqro")})
 
 
 @api.delete("/materials/{material_id}")
