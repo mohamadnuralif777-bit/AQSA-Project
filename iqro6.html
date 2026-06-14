@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iqro' 6 Interaktif — Cara Cepat Belajar Membaca Al-Qur'an</title>
+<meta name="description" content="Buku digital Iqro' Jilid 6 oleh KH. As'ad Humam dalam format interaktif: latihan iqlab, ikhfa', waqof, qolqolah, huruf awal surat, dan EBTA.">
+<meta name="theme-color" content="#0a6e5b">
+<link rel="preload" as="font" type="font/otf" crossorigin href="https://cdn.jsdelivr.net/gh/raflyfahrezi/KFGQPC-Uthmanic-Script-HAFS-Regular@master/arabic.otf">
+<style>
+@font-face{font-family:"KFGQPC HAFS Uthmanic Script";src:url("https://cdn.jsdelivr.net/gh/raflyfahrezi/KFGQPC-Uthmanic-Script-HAFS-Regular@master/arabic.otf") format("opentype");font-display:swap;}
+:root{--bg:#fff5e6;--bg2:#ffe2c2;--panel:#ffffff;--panel2:#fff1d6;--text:#1a2b2f;--muted:#5a6c72;--emerald:#0aa68a;--emerald2:#16c79a;--gold:#f5a623;--gold2:#ffd166;--rose:#c8541a;--plum:#0f3a3f;--teal:#0a6e5b;--sky:#16c79a;--lime:#a8d96a;--coral:#c8541a;--border:rgba(10,110,91,.22);--shadow:0 22px 50px rgba(10,40,40,.16);--ring:0 0 0 3px rgba(245,166,35,.4);--gradient-hero:linear-gradient(135deg,#0a6e5b 0%,#16c79a 40%,#f5a623 75%,#c8541a 100%);--gradient-gold:linear-gradient(135deg,#c8541a,#f5a623 50%,#ffd166);--gradient-panel:linear-gradient(160deg,#ffffff 0%,#fff1d6 60%,#ffe2c2 100%);--gradient-rainbow:linear-gradient(90deg,#0a6e5b,#16c79a,#f5a623,#c8541a)}
+body.dark{--bg:#06201f;--bg2:#0b3631;--panel:#0f4541;--panel2:#155b54;--text:#f4ead0;--muted:#c9bce0;--emerald:#34c9b3;--emerald2:#5ee0c8;--gold:#ffd166;--gold2:#ffe29a;--rose:#ff8a3d;--plum:#0f3a3f;--teal:#16c79a;--sky:#34c9b3;--lime:#c8e89e;--coral:#ff8a3d;--border:rgba(255,209,102,.22);--shadow:0 22px 50px rgba(0,0,0,.55);--ring:0 0 0 3px rgba(255,209,102,.4);--gradient-hero:linear-gradient(135deg,#0f3a3f 0%,#16c79a 40%,#ffd166 75%,#ff8a3d 100%);--gradient-gold:linear-gradient(135deg,#ff8a3d,#ffd166);--gradient-panel:linear-gradient(160deg,#0f3a3f 0%,#155b54 100%);--gradient-rainbow:linear-gradient(90deg,#34c9b3,#ffd166,#ff8a3d)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Comic Sans MS","Trebuchet MS",system-ui,sans-serif;background:radial-gradient(circle at 8% 0%,rgba(10,110,91,.22),transparent 42%),radial-gradient(circle at 92% 6%,rgba(245,166,35,.22),transparent 40%),radial-gradient(circle at 50% 100%,rgba(200,84,26,.16),transparent 55%),radial-gradient(circle at 20% 80%,rgba(255,209,102,.2),transparent 45%),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text);line-height:1.85;overflow-x:hidden}
+a{color:inherit}img{max-width:100%;display:block}button,input,textarea{font:inherit}button{cursor:pointer}
+.app{min-height:100vh;display:grid;grid-template-columns:320px minmax(0,1fr)}
+.sidebar{position:sticky;top:0;height:100vh;padding:20px;border-right:1px solid var(--border);background:linear-gradient(180deg,var(--panel),var(--panel2));overflow:auto;backdrop-filter:blur(14px)}
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.brand-mark{width:54px;height:54px;border-radius:16px;background:var(--gradient-hero);color:#fff;display:grid;place-items:center;box-shadow:var(--shadow);font-weight:700;font-size:1.4rem;font-family:"KFGQPC HAFS Uthmanic Script",serif}
+.brand h1{margin:0;font-size:1.1rem;line-height:1.2}.brand p{margin:2px 0 0;color:var(--muted);font-size:.88rem}
+.panel{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow)}
+.side-group{padding:16px;margin-bottom:14px}
+.side-title{margin:0 0 10px;font-size:.86rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.toc{display:grid;gap:6px;max-height:340px;overflow:auto}
+.toc a{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-radius:12px;text-decoration:none;border:1px solid transparent;background:transparent;color:var(--text);font-size:.94rem}
+.toc a:hover,.toc a.active{border-color:rgba(15,76,93,.28);background:rgba(15,76,93,.10)}
+.toc small{color:var(--muted)}
+.search input,.note-box textarea{width:100%;padding:12px 14px;border-radius:14px;border:1px solid var(--border);background:var(--panel);color:var(--text);outline:none}
+.search input:focus,.note-box textarea:focus{box-shadow:var(--ring);border-color:rgba(15,76,93,.45)}
+.badge-row{display:flex;flex-wrap:wrap;gap:8px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(15,76,93,.10);font-size:.82rem}
+.note-box textarea{min-height:110px;resize:vertical}
+.mini-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.mini-actions button,.top-btn,.primary-btn,.ghost-btn,.quiz-opt{border:1px solid var(--border);border-radius:14px;padding:10px 14px;background:var(--panel);color:var(--text);transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.mini-actions button:hover,.top-btn:hover,.primary-btn:hover,.ghost-btn:hover,.quiz-opt:hover{transform:translateY(-1px);border-color:rgba(201,143,45,.5)}
+.primary-btn{background:linear-gradient(135deg,var(--emerald),var(--gold) 60%,var(--coral));color:#fff;border-color:transparent;box-shadow:0 8px 22px rgba(10,110,91,.3)}
+.ghost-btn,.top-btn{background:transparent}
+.progress-wrap{padding:16px;margin-bottom:14px}
+.progress-label{display:flex;justify-content:space-between;align-items:center;font-size:.9rem;color:var(--muted)}
+.bar{height:10px;background:rgba(24,37,47,.10);border-radius:999px;overflow:hidden;margin-top:10px}
+.bar>span{display:block;height:100%;width:0;background:var(--gradient-rainbow);border-radius:999px;transition:width .3s ease}
+.main{min-width:0}
+.topbar{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid var(--border);background:rgba(255,245,230,.88);backdrop-filter:blur(18px)}
+body.dark .topbar{background:rgba(6,32,31,.88)}
+.topbar .meta strong{font-size:1.02rem}.topbar .meta span{display:block;color:var(--muted);font-size:.88rem}
+.top-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.content{padding:20px;display:grid;gap:18px}
+.chapter{position:relative;padding:28px;border:1px solid var(--border);background:linear-gradient(180deg,var(--panel),var(--panel2));border-radius:22px;box-shadow:var(--shadow);scroll-margin-top:100px;overflow:hidden}
+.chapter::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--gradient-rainbow)}
+.chapter h2{margin:0 0 6px;font-size:1.5rem}
+.chapter .pg{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--gradient-gold);color:#fff;font-weight:700;font-size:.85rem;margin-bottom:10px}
+.subtitle,.muted,.small{color:var(--muted)}
+.hero{display:grid;grid-template-columns:1.15fr .95fr;gap:20px;align-items:stretch;min-height:480px}
+.hero h1{margin:.1rem 0 .6rem;font-size:clamp(2.2rem,5vw,4rem);line-height:1}
+.hero .subtitle{font-size:1.05rem;line-height:1.7;max-width:56ch}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{padding:8px 12px;border-radius:999px;background:rgba(15,76,93,.10);border:1px solid var(--border);font-size:.85rem}
+.hero-visual{position:relative;min-height:100%;border-radius:22px;overflow:hidden;border:1px solid var(--border);background:linear-gradient(160deg,#0f3a3f 0%,#0a6e5b 30%,#16c79a 60%,#f5a623 85%,#c8541a 100%);display:grid;place-items:center;color:#fffdf6;padding:30px}
+.hero-visual .big-arabic{font-family:"KFGQPC HAFS Uthmanic Script",serif;font-size:clamp(5rem,14vw,11rem);line-height:1;text-shadow:0 8px 30px rgba(0,0,0,.35);text-align:center}
+.hero-visual .big-arabic small{display:block;font-size:.18em;letter-spacing:.3em;margin-top:8px;font-family:"Trebuchet MS",sans-serif}
+.hero-card{position:absolute;left:16px;right:16px;padding:10px 14px;border-radius:16px;background:rgba(255,253,246,.92);backdrop-filter:blur(12px);color:#1d2a33;box-shadow:var(--shadow);font-size:.86rem}
+body.dark .hero-card{background:rgba(15,69,65,.92);color:var(--text)}
+.float-one{bottom:18px}.float-two{top:18px}
+.rule-box{padding:16px 18px;border-radius:16px;border-left:6px solid var(--gold);background:linear-gradient(135deg,rgba(245,166,35,.18),rgba(255,209,102,.22) 60%,rgba(10,110,91,.10));margin-bottom:16px;font-weight:600}
+.rule-box .label{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--gold);color:#fff;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.arabic{font-family:"KFGQPC HAFS Uthmanic Script","Amiri Quran","Traditional Arabic",serif;direction:rtl;text-align:right;font-size:2.1rem;line-height:2.4;letter-spacing:0;word-spacing:.04em;color:var(--text);font-feature-settings:"liga","calt","rlig","ccmp";text-rendering:optimizeLegibility}
+.arabic.center{text-align:center}
+.arabic.lg{font-size:2.6rem}
+.arabic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;direction:rtl}
+.arabic-grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.arabic-cell{padding:14px 12px;border:1px solid var(--border);border-radius:14px;background:rgba(255,253,246,.74);text-align:center;font-family:"KFGQPC HAFS Uthmanic Script",serif;font-size:1.7rem;line-height:1.8;direction:rtl;transition:transform .2s,box-shadow .2s}
+.arabic-cell:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:rgba(245,166,35,.45)}
+body.dark .arabic-cell{background:rgba(15,69,65,.72)}
+.arabic-lines{display:grid;gap:8px}
+.arabic-line{padding:12px 16px;border:1px solid var(--border);border-radius:14px;background:rgba(255,253,246,.66);direction:rtl;text-align:right;font-family:"KFGQPC HAFS Uthmanic Script",serif;font-size:1.8rem;line-height:2.3}
+body.dark .arabic-line{background:rgba(15,69,65,.66)}
+.example{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:12px 16px;border-radius:14px;background:rgba(22,199,154,.12);border:1px dashed var(--emerald);margin-bottom:12px}
+.example .arrow{font-size:1.4rem;color:var(--rose);font-weight:700}
+.example .arabic{font-size:1.9rem;line-height:1.6}
+.tip{margin-top:12px;padding:10px 14px;border-radius:12px;background:rgba(200,84,26,.12);border:1px solid rgba(200,84,26,.3);font-size:.94rem}
+.quiz-panel{padding:18px;border-radius:18px;border:1px solid var(--border);background:rgba(255,253,246,.74)}
+body.dark .quiz-panel{background:rgba(15,69,65,.78)}
+.quiz-q{font-size:1.06rem;margin:8px 0 12px}
+.quiz-options{display:grid;gap:10px}
+.quiz-opt{width:100%;text-align:left;padding:12px 14px;border-radius:14px}
+.quiz-opt.selected{background:rgba(15,76,93,.14);border-color:rgba(15,76,93,.45)}
+.quiz-opt.correct{background:rgba(35,161,88,.22);border-color:rgba(35,161,88,.6)}
+.quiz-opt.wrong{background:rgba(209,69,69,.18);border-color:rgba(209,69,69,.55)}
+.score{font-size:2.4rem;font-weight:700;color:var(--emerald)}
+.quiz-controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center}
+.reading-progress{position:fixed;left:0;top:0;height:4px;width:100%;z-index:60;background:rgba(0,0,0,.05)}
+.reading-progress span{display:block;height:100%;width:0;background:var(--gradient-rainbow)}
+.scrim{display:none}.mobile-only{display:none}
+.footer-note{font-size:.88rem;color:var(--muted);margin-top:8px}
+.divider{margin:18px 0;border-top:1px dashed var(--border)}
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.kpi{padding:14px;border-radius:14px;background:linear-gradient(140deg,rgba(10,110,91,.18),rgba(22,199,154,.18) 50%,rgba(255,209,102,.24));border:1px solid var(--border)}
+.kpi strong{display:block;font-size:1.5rem}
+.kpi span{color:var(--muted);font-size:.86rem}
+.search-results{font-size:.9rem;color:var(--muted);margin-top:8px;min-height:18px}
+.highlight{background:rgba(245,166,35,.45);border-radius:4px;padding:0 2px}
+.waqof-table{width:100%;border-collapse:separate;border-spacing:0;margin:10px 0;border-radius:14px;overflow:hidden;border:1px solid var(--border)}
+.waqof-table td,.waqof-table th{padding:10px 12px;border-bottom:1px solid var(--border);text-align:center;background:rgba(255,253,246,.66)}
+body.dark .waqof-table td,body.dark .waqof-table th{background:rgba(15,69,65,.66)}
+.waqof-table .sym{font-family:"KFGQPC HAFS Uthmanic Script",serif;font-size:1.6rem;color:var(--rose)}
+@media (max-width:1180px){.app{grid-template-columns:1fr}.sidebar{position:fixed;left:0;top:0;bottom:0;width:min(92vw,340px);transform:translateX(-102%);transition:transform .25s ease;z-index:50;box-shadow:var(--shadow)}body.sidebar-open .sidebar{transform:translateX(0)}.scrim{position:fixed;inset:0;background:rgba(0,0,0,.32);z-index:40;display:none}body.sidebar-open .scrim{display:block}.hero{grid-template-columns:1fr}.mobile-only{display:inline-flex}.kpi-row{grid-template-columns:1fr}}
+@media (max-width:720px){.topbar,.content{padding-left:14px;padding-right:14px}.chapter{padding:20px}.arabic-grid{grid-template-columns:repeat(2,1fr)}.arabic-cell{font-size:1.4rem}.arabic-line{font-size:1.5rem;line-height:2.1}.hero-visual{min-height:260px}}
+</style>
+</head>
+<body>
+<div class="reading-progress"><span id="readingBar"></span></div>
+<div class="scrim" id="scrim"></div>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="brand-mark">اقْرَأْ</div>
+    <div><h1>Iqro' Jilid 6</h1><p>Interaktif • KH. As'ad Humam</p></div>
+  </div>
+  <div class="panel side-group progress-wrap">
+    <div class="progress-label"><span>Progress belajar</span><strong id="progressText">0%</strong></div>
+    <div class="bar"><span id="progressFill"></span></div>
+  </div>
+  <div class="panel side-group search">
+    <p class="side-title">Pencarian halaman</p>
+    <input id="searchBox" type="search" placeholder="Cari: iqlab, ikhfa', waqof, qolqolah...">
+    <div class="search-results" id="searchResults">Ketik untuk mencari materi.</div>
+  </div>
+  <div class="panel side-group">
+    <p class="side-title">Daftar Halaman</p>
+    <nav class="toc" id="toc"></nav>
+  </div>
+  <div class="panel side-group note-box">
+    <p class="side-title">Catatan pribadi</p>
+    <textarea id="noteField" placeholder="Tulis catatan, tersimpan otomatis."></textarea>
+    <div class="mini-actions">
+      <button class="ghost-btn" id="clearNote">Hapus</button>
+      <button class="primary-btn" id="saveBookmark">Bookmark</button>
+    </div>
+    <div class="footer-note" id="noteStatus">Tersimpan di perangkat.</div>
+  </div>
+  <div class="panel side-group">
+    <p class="side-title">Ringkas</p>
+    <div class="badge-row">
+      <span class="badge">32 Halaman</span>
+      <span class="badge">Edisi Revisi 2000</span>
+      <span class="badge">EBTA + Kuis</span>
+    </div>
+  </div>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <div class="meta"><strong>Iqro' 6 — Cara Cepat Belajar Membaca Al-Qur'an</strong><span>Idghom bighunnah, iqlab, ikhfa', waqof, qolqolah, huruf awal surat</span></div>
+    <div class="top-actions">
+      <button class="top-btn mobile-only" id="sidebarToggle">☰ Daftar</button>
+      <button class="top-btn" id="jumpBookmark">⭢ Bookmark</button>
+      <button class="top-btn" id="themeToggle" aria-pressed="false">◐ Mode</button>
+    </div>
+  </header>
+  <main class="content" id="contentRoot">
+
+    <section class="chapter hero" id="cover">
+      <div>
+        <div class="small">Buku digital interaktif berbasis HTML tunggal</div>
+        <h1>Buku Iqro' Jilid 6</h1>
+        <p class="subtitle">Cara cepat belajar membaca Al-Qur'an. Pada jilid 6 santri berlatih idghom bighunnah, iqlab, ikhfa' haqiqi (15 huruf), tanda waqof, qolqolah bertasydid, huruf-huruf awal surat, dan EBTA — penutup rangkaian Iqro' sebelum tadarus Al-Qur'an.</p>
+        <div class="hero-actions">
+          <button class="primary-btn" id="startReading">Mulai Belajar</button>
+          <button class="ghost-btn" id="openBookmarkList">Lihat Bookmark</button>
+        </div>
+        <div class="hero-meta">
+          <span>32 Halaman</span><span>EBTA Akhir</span><span>Mode Gelap</span><span>Kuis Tajwid</span>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><strong>32</strong><span>Halaman latihan</span></div>
+          <div class="kpi"><strong>15</strong><span>Huruf ikhfa'</span></div>
+          <div class="kpi"><strong>6</strong><span>Tanda waqof</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card float-two">Oleh: <strong>KH. As'ad Humam</strong> · Balai Litbang LPTQ Nasional · Team Tadarus "AMM" Yogyakarta</div>
+        <div class="big-arabic">اقْرَأْ<small>JILID 6</small></div>
+        <div class="hero-card float-one">"خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ" — sebaik-baik kalian adalah yang belajar Al-Qur'an dan mengajarkannya.</div>
+      </div>
+    </section>
+
+    <section class="chapter" id="petunjuk">
+      <span class="pg">Petunjuk Mengajar</span>
+      <h2>Petunjuk Mengajar Jilid 6</h2>
+      <ol>
+        <li>Petunjuk mengajar jilid 1 nomor 1, 2, 3, 5, 7, 8 dan jilid 2 nomor 6, jilid 3 nomor 3 &amp; 4, jilid 4 nomor 3, jilid 5 nomor 3 &amp; 4 semuanya tetap berlaku pada jilid 6.</li>
+        <li>Materi halaman EBTA sebaiknya dihafalkan, syukur dimengerti tarjamahnya.</li>
+        <li>Pedoman <strong>"Pelan Asal Benar"</strong> tetap berlaku. Tak apa bila santri membaca lamban / tersendat, asalkan setiap yang dibaca itu betul. Kelancaran akan terwujud setelah tadarus beberapa juz.</li>
+        <li>Jangan diajari membaca berlagu, walaupun dengan irama murottal.</li>
+        <li>Pelajaran tanda waqof disederhanakan dan disatukan pengenalannya di halaman 21.</li>
+        <li>Sebelum EBTA, ada tambahan pelajaran <em>Huruf-huruf Awal Surat</em>.</li>
+      </ol>
+      <p class="footer-note">Yogyakarta, 3 Juli 1990 — Penyusun, H. As'ad Humam. Edisi Revisi Tahun 2000.</p>
+    </section>
+
+  </main>
+</div>
+</div>
+
+<script>
+const PAGES = [
+  { n:1, title:"Idghom bighunnah → و (Nun sukun/tanwin bertemu Wawu)", rule:"Masuk dengan dengung — ditekan & ditahan 2 harokat.",
+    example:{a:"عَنْ ⟵ وَالِدٍ", arrow:"·", b:"مِنْ ⟵ وَاحِدٍ"},
+    lines:[
+      "حَبًّا وَنَبَاتًا ۝ سِرَاجًا وَهَّاجًا ۝ زَجْرَةٌ وَاحِدَةٌ ۝",
+      "رَحْمَةً وَعِلْمًا ۝ عَدُوًّا وَحُزْنًا ۝",
+      "وَإِلٰهُكُمْ إِلٰهٌ وَاحِدٌ ۝ مِنْ وَرَائِهِمْ مُحِيْطٌ ۝",
+      "أَحْسَنُ أَثَاثًا وَرِئْيًا ۝ كَانَ فَاحِشَةً وَمَقْتًا ۝",
+      "الْحَمِيمَ وَغَسَّاقًا ۝ وَالْآخِرَةُ خَيْرٌ وَأَبْقَى ۝",
+      "بُهْتَانًا وَإِثْمًا مُبِيْنًا ۝ مِنْ وَلِيٍّ وَلَا نَصِيْرٍ ۝"
+    ] },
+  { n:2, title:"Lanjutan idghom bighunnah → و", rule:"Lanjutkan latihan dengung 2 harokat pada nun sukun/tanwin bertemu wawu.",
+    lines:[
+      "وَوَالِدٍ وَمَا وَلَدَ ۝ نُوْحٌ وَعَادٌ وَثَمُوْدُ ۝",
+      "سَبْعَةٌ وَثَامِنُهُمْ ۝ هُدًى وَبُشْرَى لِلْمُؤْمِنِيْنَ ۝",
+      "وَفَرِحُوْا بِالْحَيٰوةِ الدُّنْيَا ۝ ثَوَابًا وَخَيْرٌ مَّرَدًّا ۝",
+      "الَّذِيْ جَمَعَ مَالًا وَّعَدَّدَهُ ۝ يَحْسَبُ اَنَّ مَالَهٗٓ اَخْلَدَهُ ۝",
+      "طَاعَةٌ وَّقَوْلٌ مَّعْرُوْفٌ ۝ وَجَنّٰتٍ وَّعُيُوْنٍ ۝",
+      "نَضْرَةً وَّسُرُوْرًا ۝ وَفَاكِهَةً وَّأَبًّا ۝",
+      "لَّا بَارِدٍ وَّلَا كَرِيْمٍ ۝ فِيْ سَمُوْمٍ وَّحَمِيْمٍ ۝",
+      "مِنْ وَّرَائِهٖ عَذَابٌ ۝ مَّغْفِرَةٌ وَّاَجْرٌ عَظِيْمٌ ۝"
+    ] },
+  { n:3, title:"Latihan idghom bighunnah → و dalam ayat", rule:"Bacalah ayat-ayat berikut dengan menjaga dengung 2 harokat.",
+    lines:[
+      "وَاَنَّ اللّٰهَ قَدْ اَحَاطَ بِكُلِّ شَيْءٍ عِلْمًا ۝",
+      "لَوَلَّيْتَ مِنْهُمْ فِرَارًا وَّلَمُلِئْتَ مِنْهُمْ رُعْبًا ۝",
+      "فَلَنَقُصَّنَّ عَلَيْهِمْ بِعِلْمٍ وَّمَا كُنَّا غَآئِبِيْنَ ۝",
+      "هٰذَا بَيَانٌ لِّلنَّاسِ وَهُدًى وَّمَوْعِظَةٌ لِّلْمُتَّقِيْنَ ۝",
+      "وَلَقَدْ جَعَلْنَا فِى السَّمَآءِ بُرُوْجًا وَّزَيَّنّٰهَا لِلنّٰظِرِيْنَ ۝",
+      "اِنَّ وَعْدَ اللّٰهِ حَقٌّ وَّلَا يَسْتَخِفَّنَّكَ الَّذِيْنَ لَا يُوْقِنُوْنَ ۝",
+      "وَلَهُمْ فِيْهَآ اَزْوَاجٌ مُّطَهَّرَةٌ وَّهُمْ فِيْهَا خٰلِدُوْنَ ۝",
+      "اِتَّبِعُوْا مَنْ لَّا يَسْـَٔلُكُمْ اَجْرًا وَّهُمْ مُّهْتَدُوْنَ ۝"
+    ] },
+  { n:4, title:"Idghom bighunnah → ي dan م", rule:"Masuk dengan dengung 2 harokat — Nun sukun / tanwin bertemu Ya (ي) atau Mim (م).",
+    example:{a:"اَنْ ⟵ يُّوْصَلَ", arrow:"·", b:"مِنْ ⟵ يَّوْمَئِذٍ"},
+    lines:[
+      "مَنْ يُّؤْمِنُ بِاللّٰهِ ۝ اِلَّآ اَنْ يَّشَآءَ اللّٰهُ ۝",
+      "اِنْ يَّقُوْلُوْنَ اِلَّا كَذِبًا ۝ اَنْ يَّأْتِيَنِيْ بِهِمْ جَمِيْعًا ۝",
+      "وُجُوْهٌ يَّوْمَئِذٍ مُّسْفِرَةٌ ۝ ضَاحِكَةٌ مُّسْتَبْشِرَةٌ ۝",
+      "اِنْ هُوَ اِلَّا وَحْيٌ يُّوْحَى ۝ عَلَّمَهٗ شَدِيْدُ الْقُوٰى ۝",
+      "لَعِبْرَةً لِّمَنْ يَّخْشٰى ۝ لِمَنْ يَّشَآءُ وَيَرْضٰى ۝",
+      "وَيْلٌ يَّوْمَئِذٍ لِّلْمُكَذِّبِيْنَ ۝ فِيْ جَنّٰتٍ يَّتَسَآءَلُوْنَ ۝"
+    ] },
+  { n:5, title:"Idghom bighunnah → م (lanjutan)", rule:"Nun sukun / tanwin bertemu mim — masuk dengan dengung 2 harokat.",
+    lines:[
+      "وَظِلٍّ مِّنْ يَّحْمُوْمٍ ۝ اَوَآبَآؤُنَا الْاَوَّلُوْنَ ۝",
+      "لَنْ يَّغْفِرَ اللّٰهُ لَهُمْ ۝ اِلَّآ اَنْ يَّشَآءَ اللّٰهُ ۝",
+      "مَآ اُرِيْدُ مِنْهُمْ مِّنْ رِّزْقٍ وَّمَآ اُرِيْدُ اَنْ يُّطْعِمُوْنِ ۝",
+      "فَوَيْلٌ لِّلَّذِيْنَ كَفَرُوْا مِنْ يَّوْمِهِمُ الَّذِيْ يُوْعَدُوْنَ ۝",
+      "فَمَا اسْطَاعُوْٓا اَنْ يَّظْهَرُوْهُ وَمَا اسْتَطَاعُوْا لَهٗ نَقْبًا ۝",
+      "وَمَا تَشَآءُوْنَ اِلَّآ اَنْ يَّشَآءَ اللّٰهُ رَبُّ الْعٰلَمِيْنَ ۝",
+      "كُلٌّ تَجْرِيْ لِاَجَلٍ مُّسَمًّى ۝ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ ۝",
+      "مَنْ يَّتَبَدَّلِ الْكُفْرَ بِالْاِيْمَانِ فَقَدْ ضَلَّ سَوَآءَ السَّبِيْلِ ۝"
+    ] },
+  { n:6, title:"Latihan campuran idghom bighunnah", rule:"Gabungan nun sukun/tanwin bertemu (ي م ن و) — semua dibaca dengung.",
+    lines:[
+      "فَمَنْ يَّعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَّرَهٗ ۝",
+      "اِنَّ فِى السَّمٰوٰتِ وَالْاَرْضِ لَاٰيٰتٍ لِّلْمُؤْمِنِيْنَ ۝",
+      "قَالَ وَمَنْ يَّقْنَطُ مِنْ رَّحْمَةِ رَبِّهٖٓ اِلَّا الضَّآلُّوْنَ ۝",
+      "يَوْمَئِذٍ يَّصْدُرُ النَّاسُ اَشْتَاتًا لِّيُرَوْا اَعْمَالَهُمْ ۝",
+      "يٰٓاَيُّهَا النَّبِيُّ اتَّقِ اللّٰهَ وَلَا تُطِعِ الْكٰفِرِيْنَ ۝",
+      "وَاَقْرِضُوا اللّٰهَ قَرْضًا حَسَنًا يُّضٰعِفْ لَهُمْ ۝",
+      "مَآ اُرِيْدُ مِنْهُمْ مِّنْ رِّزْقٍ وَّمَآ اُرِيْدُ اَنْ يُّطْعِمُوْنِ ۝",
+      "فَيُضِلُّ اللّٰهُ مَنْ يَّشَآءُ وَيَهْدِيْ مَنْ يَّشَآءُ ۝"
+    ] },
+  { n:7, title:"Iqlab — Nun sukun / tanwin bertemu ب", rule:"Nun sukun ( نْ ) atau tanwin bertemu huruf ب → bunyi nun berubah menjadi MIM dengan dengung 2 harokat (iqlab).",
+    example:{a:"مِنْۢ بَعْدِ", arrow:"·", b:"نُوْرٌۢ بَيْتِيْ"},
+    grid3:[
+      ["اَبَدًاۢ بِمَا","كَافِرٌۢ بِهٖ","عِوَانٌۢ بَيْنَ"],
+      ["الْاَنْۢبِيَآءِ","وَضَآئِقٌۢ بِهٖ","مِنْۢ بَأْسٍ"],
+      ["بِغَيٰبِيْنَهُمْ","حَلٌّۢ بِهٰذَا","لَجَنْۢبِهٖ"]
+    ],
+    lines:[
+      "هٰذَا مُغْتَسَلٌۢ بَارِدٌ ۝ ذٰلِكَ رَجْعٌۢ بَعِيْدٌ ۝",
+      "كُلُّ نَفْسٍۭ بِمَا كَسَبَتْ ۝ خَبِيْرٌۢ بِمَا تَعْمَلُوْنَ ۝",
+      "اَللّٰهُ لَطِيْفٌۢ بِعِبَادِهٖ ۝ بِكُلِّ شَيْءٍۭ بَصِيْرٌ ۝"
+    ] },
+  { n:8, title:"Latihan iqlab lanjutan", rule:"Bacaan dengung 2 harokat dengan suara MIM samar.",
+    lines:[
+      "لِلّٰهِ مَا فِى السَّمٰوٰتِ وَمَا فِى الْاَرْضِ ۝",
+      "بَعِيْدٌ خَلِيْقٌ قَوِيٌّ ۝ عِبَادِهٖ وَرَءُوْفٌۢ بِاللّٰهِ ۝",
+      "هُمْ بِهٖ قَرِيْبٌ ۝ وَهُوَ بِسُوْٓءٍ اُمَّةٍ كَذٰلِكَ ۝",
+      "بَعِيْدٌ اُولٰئِكَ فَضْلٌ ۝ يَأْذَنُوْنَ كَانُوْا بِمَا جَزَآءً ۝",
+      "الْحُطَمَةُ ۝ وَمَآ اَدْرٰىكَ مَا الْحُطَمَةُ ۝",
+      "وَجِيْفَةٌ ۝ يَوْمَئِذٍ قُلُوْبٌ ۝ ضَعْفَةً مِّائَةً اَضْعَافًا ۝",
+      "لَهُمْ يَنْۢبَغِيْ وَمَا ۝ عَلَيْكُمْ اَتْلُوْا رَسُوْلًا ۝",
+      "مَنْۢبِتًا هَبَآءً فَكَانَتْ ۝ حَبًّا فَاَنْۢبَتْنَا ۝"
+    ] },
+  { n:9, title:"Iqlab dalam ayat-ayat", rule:"Latihan ayat-ayat berisi iqlab — perhatikan suara MIM samar berdengung.",
+    lines:[
+      "فَاصْبِرْ اِنَّ وَعْدَ اللّٰهِ حَقٌّ وَّاسْتَغْفِرْ لِذَنْۢبِكَ ۝",
+      "وَسَبِّحْ بِحَمْدِ رَبِّكَ بِالْعَشِيِّ وَالْاِبْكَارِ ۝",
+      "فَمَنْ يَّهْدِيْهِ مِنْۢ بَعْدِ اللّٰهِ اَفَلَا تَذَكَّرُوْنَ ۝",
+      "وَمَا لَهُمْ بِذٰلِكَ مِنْ عِلْمٍ اِنْ هُمْ اِلَّا يَظُنُّوْنَ ۝",
+      "وَمَا جَعَلَ اَزْوَاجَكُمُ الّٰتِيْ تُظٰهِرُوْنَ مِنْهُنَّ اُمَّهٰتِكُمْ ۝",
+      "فِيْٓ اَدْنَى الْاَرْضِ وَهُمْ مِّنْۢ بَعْدِ غَلَبِهِمْ سَيَغْلِبُوْنَ ۝",
+      "وَمَنْ يُّضْلِلِ اللّٰهُ فَمَا لَهٗ مِنْ وَّلِيٍّ مِّنْۢ بَعْدِهٖ ۝",
+      "فَاِمْسَاكٌۢ بِمَعْرُوْفٍ اَوْ تَسْرِيْحٌۢ بِاِحْسَانٍ ۝"
+    ] },
+  { n:10, title:"Latihan hamzah & huruf sukun bersambung", rule:"Latihan ketepatan makhroj pada hamzah dan huruf-huruf sukun bertemu.",
+    grid3:[
+      ["اَوْزِعْنِيْ","وَهَيِّئْ لَنَا","قُرَّةَ اَعْيُنٍ"],
+      ["اَيُّ الْحِزْبَيْنِ","اَوْ وَزَنُوْهُمْ","مَنَاسِكَكُمْ"],
+      ["يُعْجِزُوْنَ","يَأْجُوْجَ","مَأْجُوْجَ"],
+      ["الْاَفْـِٔدَةِ","اٰلِهَةٌ هَوِيَهُ","اَلصَّلٰوةُ وَالزَّكٰوةُ"],
+      ["مِنْ مُّضْغَةٍ","فَلِلّٰهِ الْمَكْرُ","الْمُزَّمِّلُ"],
+      ["يُعْجِبُكَ","فَأْوُوْٓا اِلَى الْكَهْفِ","وَالْمُنْخَنِقَةُ"],
+      ["يَسْتَنْۢبِئُوْنَكَ","فِيْ بَحْرٍ لُّجِّيٍّ","لَا تُلْهِيْهِمْ"],
+      ["وَلَآ اٰمِّيْنَ","شَنَاٰنُ قَوْمٍ","جَنَّةُ الْمَأْوٰى"],
+      ["لِشَأْنٍ","لَا يَأْيَسُ","اِنَّمَآ اَنَا مِنَ الْمُنْذِرِيْنَ"]
+    ] },
+  { n:11, title:"Ikhfa' Haqiqi — 15 huruf (ت ث)", rule:"Dibaca samar-samar & dengung bila nun sukun / tanwin bertemu dengan salah satu dari 15 huruf ikhfa'.",
+    example:{a:"(۱) ت ⟵ اَنْتَ", arrow:"·", b:"(۲) ث ⟵ بِالْاُنْثٰى"},
+    lines:[
+      "مَنْ تَطَوَّعَ ۝ اَنْ تَقُوْلُوْا ۝ اَوْ اَكْنَنْتُمْ ۝",
+      "جَنّٰتٍ تَجْرِيْ مِنْ تَحْتِهَا الْاَنْهٰرُ خٰلِدِيْنَ فِيْهَا ۝",
+      "اِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَاِنَّا لَهٗ لَحٰفِظُوْنَ ۝",
+      "بِالْاُنْثٰى ۝ وَكُنْتُمْ اَزْوَاجًا ثَلٰثَةً ۝",
+      "خَلَقَ الذَّكَرَ وَالْاُنْثٰى ۝ مِثْلُ حَظِّ الْاُنْثَيَيْنِ ۝",
+      "عَلَى الْحِنْثِ الْعَظِيْمِ ۝ وَرَيْحَانٌ وَجَنَّةُ نَعِيْمٍ ۝"
+    ] },
+  { n:12, title:"Ikhfa' → ج د", rule:"Nun sukun / tanwin bertemu ج atau د → dibaca samar berdengung.",
+    example:{a:"(۳) ج ⟵ مِنْ جُوْعٍ", arrow:"·", b:"(٤) د ⟵ مِنْ دُوْنِهَا"},
+    lines:[
+      "نُمَتِّعُهُمْ قَلِيْلًا ثُمَّ نَضْطَرُّهُمْ اِلٰى عَذَابٍ غَلِيْظٍ ۝",
+      "وَمَنْ جَآءَ ۝ مُّوْصٍ جَنَفًا ۝ التَّوْرٰىةِ وَالْاِنْجِيْلِ ۝",
+      "اِنَّ الْاَبْرَارَ لَفِيْ نَعِيْمٍ ۝",
+      "وَتَرٰى كُلَّ اُمَّةٍ جَاثِيَةً ۝ كُلُّ اُمَّةٍ تُدْعٰٓى اِلٰى كِتٰبِهَا ۝",
+      "وَنَادَيْنٰهُ مِنْ جَانِبِ الطُّوْرِ الْاَيْمَنِ وَقَرَّبْنٰهُ نَجِيًّا ۝",
+      "عِنْدَ سِدْرَةِ الْمُنْتَهٰى ۝ وَفِيْ خَلْقِكُمْ وَمَا يَبُثُّ مِنْ دَآبَّةٍ اٰيٰتٌ لِّقَوْمٍ يُّوْقِنُوْنَ ۝",
+      "بَلْ لَّهُمْ مَّوْعِدٌ لَّنْ يَّجِدُوْا مِنْ دُوْنِهٖ مَوْئِلًا ۝"
+    ] },
+  { n:13, title:"Ikhfa' → ذ ز", rule:"Nun sukun / tanwin bertemu ذ atau ز → samar berdengung 2 harokat.",
+    example:{a:"(٥) ذ ⟵ مِنْ ذُرِّيَّةٍ", arrow:"·", b:"(٦) ز ⟵ اُنْزِلَ"},
+    lines:[
+      "وَمَا لِاَحَدٍ عِنْدَهٗ مِنْ نِّعْمَةٍ تُجْزٰى ۝",
+      "عَنْ ذِى الْقَرْنَيْنِ ۝ يَتِيْمًا ذَا مَقْرَبَةٍ ۝",
+      "اَوْ مِسْكِيْنًا ذَا مَتْرَبَةٍ ۝",
+      "ءَاَنْذَرْتَهُمْ اَمْ لَمْ تُنْذِرْهُمْ لَا يُؤْمِنُوْنَ ۝",
+      "وَلَا تَقُوْلَنَّ لِشَيْءٍ اِنِّيْ فَاعِلٌ ذٰلِكَ غَدًا ۝",
+      "اِنْ زَلَلْتُمْ ۝ لَنَنْزِعَنَّ ۝",
+      "اَوْ يُلْقٰٓى اِلَيْهِ كَنْزٌ اَوْ تَكُوْنُ لَهٗ جَنَّةٌ يَّأْكُلُ مِنْهَا ۝",
+      "تَنْزِيْلُ الْكِتٰبِ مِنَ اللّٰهِ الْعَزِيْزِ الْحَكِيْمِ ۝"
+    ] },
+  { n:14, title:"Ikhfa' → س ش", rule:"Nun sukun / tanwin bertemu س atau ش → samar berdengung 2 harokat.",
+    example:{a:"(٧) س ⟵ اِنْسَانٌ", arrow:"·", b:"(٨) ش ⟵ مِنْ شَعَآئِرِ"},
+    lines:[
+      "وَاَنْزَلْنَا فِيْهَآ اٰيٰتٍۭ بَيِّنٰتٍ لَّعَلَّكُمْ تَذَكَّرُوْنَ ۝",
+      "مِنْ اٰيَةٍ اَوْ نُنْسِهَا ۝ قَوْلًا سَدِيْدًا ۝",
+      "خَمْسَةٌ سَادِسُهُمْ ۝ قُتِلَ الْاِنْسَانُ مَآ اَكْفَرَهٗ ۝",
+      "اِلَّا مَنْ اَتَى اللّٰهَ بِقَلْبٍ سَلِيْمٍ ۝",
+      "لَا يَأْيَسُ مِنْ رَّوْحِ اللّٰهِ اِلَّا الْقَوْمُ الْكٰفِرُوْنَ ۝",
+      "قُلْنَآ اِذًا شَطَطًا ۝ وَيُنْشِئُ السَّحَابَ الثِّقَالَ ۝",
+      "ثُمَّ اِذَا شَآءَ اَنْشَرَهٗ ۝",
+      "مِنْ شَرِّ مَا خَلَقَ ۝ وَمِنْ شَرِّ غَاسِقٍ اِذَا وَقَبَ ۝"
+    ] },
+  { n:15, title:"Ikhfa' → ص ض", rule:"Nun sukun / tanwin bertemu ص atau ض → samar berdengung 2 harokat.",
+    example:{a:"(٩) ص ⟵ مَنْ صَلَحَ", arrow:"·", b:"(١٠) ض ⟵ مَنْ ضَلَّ"},
+    lines:[
+      "وَنُخْرِجُ لَهٗ يَوْمَ الْقِيٰمَةِ كِتٰبًا يَّلْقٰىهُ مَنْشُوْرًا ۝",
+      "مِنْ مَّآءٍ صَدِيْدٍ ۝ مَنْ صَلَحَ مِنْ اٰبَآئِهِمْ ۝",
+      "يَوْمَ لَا يُغْنِيْ عَنْهُمْ كَيْدُهُمْ شَيْئًا وَّلَا هُمْ يُنْصَرُوْنَ ۝",
+      "فَلْيَعْمَلْ عَمَلًا صَالِحًا وَّلَا يُشْرِكْ بِعِبَادَةِ رَبِّهٖٓ اَحَدًا ۝",
+      "قَوْلٌ مَّعْرُوْفٌ وَّمَغْفِرَةٌ خَيْرٌ مِّنْ صَدَقَةٍ يَّتْبَعُهَآ اَذًى ۝",
+      "وَطَلْحٍ مَّنْضُوْدٍ ۝ لَهٗ ذُرِّيَّةٌ ضُعَفَآءُ ۝",
+      "وَكُلًّا ضَرَبْنَا لَهُ الْاَمْثَالَ وَكُلًّا تَبَّرْنَا تَتْبِيْرًا ۝",
+      "وَقَالَ الظّٰلِمُوْنَ اِنْ تَتَّبِعُوْنَ اِلَّا رَجُلًا مَّسْحُوْرًا ۝"
+    ] },
+  { n:16, title:"Ikhfa' → ط ظ", rule:"Nun sukun / tanwin bertemu ط atau ظ → samar berdengung 2 harokat.",
+    example:{a:"(١١) ط ⟵ فِدْيَةُ طَعَامٍ", arrow:"·", b:"(١٢) ظ ⟵ هُمْ يُنْظَرُوْنَ"},
+    lines:[
+      "وَمَنْ ضَلَّ فَقُلْ اِنَّمَآ اَنَا مِنَ الْمُنْذِرِيْنَ ۝",
+      "حَلٰلًا طَيِّبًا ۝ وَمَا يَنْطِقُ عَنِ الْهَوٰى ۝",
+      "اِنْ هُوَ اِلَّا وَحْيٌ يُّوْحٰى ۝",
+      "وَمِنَ الَّيْلِ فَاسْجُدْ لَهٗ وَسَبِّحْهُ لَيْلًا طَوِيْلًا ۝",
+      "وَوَقَعَ الْقَوْلُ عَلَيْهِمْ بِمَا ظَلَمُوْا فَهُمْ لَا يَنْطِقُوْنَ ۝",
+      "هُمْ يُنْظَرُوْنَ ۝ عَلَى الْاَرَآئِكِ يَنْظُرُوْنَ ۝",
+      "الْاَمْرَآءُ ظَاهِرًا وَّلَا تَسْتَفْتِ فِيْهِمْ مِّنْهُمْ اَحَدًا ۝",
+      "قَالَ سَنَنْظُرُ اَصَدَقْتَ اَمْ كُنْتَ مِنَ الْكٰذِبِيْنَ ۝"
+    ] },
+  { n:17, title:"Ikhfa' → ف ق", rule:"Nun sukun / tanwin bertemu ف atau ق → samar berdengung 2 harokat.",
+    example:{a:"(١٣) ف ⟵ وَاَنْفِقُوْا", arrow:"·", b:"(١٤) ق ⟵ مِنْ قَبْلِكُمْ"},
+    lines:[
+      "وَاَنْفِقُوْا خَيْرًا لِّاَنْفُسِكُمْ ۝ فَتَنْفَعَهُ الذِّكْرٰى ۝",
+      "اِذَا السَّمَآءُ انْفَطَرَتْ ۝ وَاِذَا الْكَوَاكِبُ انْتَثَرَتْ ۝",
+      "يٰرَبِّ اِنَّ قَوْمِى اتَّخَذُوْا هٰذَا الْقُرْاٰنَ مَهْجُوْرًا ۝",
+      "اِنَّا رَآدُّوْهُ اِلَيْكَ وَجَاعِلُوْهُ مِنَ الْمُرْسَلِيْنَ ۝",
+      "بِاَيِّ ذَنْۢبٍ قُتِلَتْ ۝",
+      "يُوْفُوْنَ بِعَهْدِ اللّٰهِ وَلَا يَنْقُضُوْنَ الْمِيْثَاقَ ۝",
+      "وَالْجَآنَّ خَلَقْنٰهُ مِنْ قَبْلُ مِنْ نَّارِ السَّمُوْمِ ۝",
+      "بَلْ كَذَّبُوْا بِالْحَقِّ لَمَّا جَآءَهُمْ فَهُمْ فِيْٓ اَمْرٍ مَّرِيْجٍ ۝"
+    ] },
+  { n:18, title:"Ikhfa' → ك", rule:"Nun sukun / tanwin bertemu ك → samar berdengung 2 harokat. Genap 15 huruf ikhfa'.",
+    example:{a:"(١٥) ك ⟵ فَمَنْ كَانَ", arrow:"·", b:"خَيْرًا كَثِيْرًا"},
+    lines:[
+      "وَفَاكِهَةً كَثِيْرَةً ۝ وَّلَتَعْلُنَّ عُلُوًّا كَبِيْرًا ۝",
+      "اِنَّا مَكَّنَّا لَهٗ فِى الْاَرْضِ وَاٰتَيْنٰهُ مِنْ كُلِّ شَيْءٍ سَبَبًا ۝",
+      "يٰٓاَيُّهَا الْمَلَاُ اِنِّيْٓ اُلْقِيَ اِلَيَّ كِتٰبٌ كَرِيْمٌ ۝",
+      "اِذَا جَعَلَهٗ نَارًا قَالَ اٰتُوْنِيْٓ اُفْرِغْ عَلَيْهِ قِطْرًا ۝",
+      "اِنْ كَانَتْ اِلَّا صَيْحَةً وَّاحِدَةً فَاِذَا هُمْ خَامِدُوْنَ ۝",
+      "يَوْمَ يَرَوْنَهَا لَمْ يَلْبَثُوْٓا اِلَّا عَشِيَّةً اَوْ ضُحٰىهَا ۝",
+      "فَاِنَّ لَهٗ مَعِيْشَةً ضَنْكًا وَّنَحْشُرُهٗ يَوْمَ الْقِيٰمَةِ اَعْمٰى ۝"
+    ] },
+  { n:19, title:"Tanda-tanda Waqof", rule:"Pengenalan tanda-tanda waqof yang sering ditemui ketika tadarus Al-Qur'an.", waqof:true,
+    lines:[
+      "فَتَوَلَّ عَنْهُمْ ۘ يَوْمَ يَدْعُ الدَّاعِ اِلٰى شَيْءٍ نُّكُرٍ ۝",
+      "وَاِنَّ رَبَّكَ هُوَ يَحْشُرُهُمْ ۗ اِنَّهٗ حَكِيْمٌ عَلِيْمٌ ۝",
+      "اَفَمَنْ يَّخْلُقُ كَمَنْ لَّا يَخْلُقُ ۗ اَفَلَا تَذَكَّرُوْنَ ۝",
+      "اِلَّا امْرَاَتَهٗ ۖ قَدَّرْنَآ اِنَّهَا لَمِنَ الْغٰبِرِيْنَ ۝",
+      "ذٰلِكَ الْكِتٰبُ لَا رَيْبَ ۛ فِيْهِ ۛ هُدًى لِّلْمُتَّقِيْنَ ۝",
+      "وَاتْرُكِ الْبَحْرَ رَهْوًا ۗ اِنَّهُمْ جُنْدٌ مُّغْرَقُوْنَ ۝"
+    ] },
+  { n:20, title:"Latihan tanda waqof dalam ayat", rule:"Bacalah ayat-ayat berikut dengan memperhatikan tanda waqofnya.",
+    lines:[
+      "اَلَّذِيْنَ تَتَوَفّٰىهُمُ الْمَلٰٓئِكَةُ طَيِّبِيْنَ ۙ يَقُوْلُوْنَ سَلٰمٌ ۝",
+      "مَتَاعٌ قَلِيْلٌ ۗ ثُمَّ مَأْوٰىهُمْ جَهَنَّمُ ۗ وَبِئْسَ الْمِهَادُ ۝",
+      "قَالَ اَنْتُمْ شَرٌّ مَّكَانًا ۚ وَاللّٰهُ اَعْلَمُ بِمَا تَصِفُوْنَ ۝",
+      "اِنَّ وَعْدَ اللّٰهِ حَقٌّ ۖ فَلَا تَغُرَّنَّكُمُ الْحَيٰوةُ الدُّنْيَا ۝",
+      "وَمَنْ يَّبْتَغِ غَيْرَ الْاِسْلَامِ دِيْنًا فَلَنْ يُّقْبَلَ مِنْهُ ۝",
+      "حَتّٰٓى اِذَا سَاوٰى بَيْنَ الصَّدَفَيْنِ قَالَ انْفُخُوْا ۝",
+      "اِنْ يَّمْسَسْكُمْ قَرْحٌ فَقَدْ مَسَّ الْقَوْمَ قَرْحٌ مِّثْلُهٗ ۝",
+      "اَللّٰهُ اَعْلَمُ بِمَا لَبِثُوْا ۚ لَهٗ غَيْبُ السَّمٰوٰتِ وَالْاَرْضِ ۝"
+    ] },
+  { n:21, title:"Waqof pada nun bertasydid (نَّ)", rule:"Cara mewaqofkan: suara \"hun\" ditekan dan ditahan 2 harokat.",
+    example:{a:"لَهُنَّ", arrow:"⟵", b:"\"hun\" ditahan 2 harokat"},
+    lines:[
+      "هُنَّ لِبَاسٌ لَّكُمْ وَاَنْتُمْ لِبَاسٌ لَّهُنَّ ۝",
+      "عَلِمَ اللّٰهُ اَنَّكُمْ كُنْتُمْ تَخْتَانُوْنَ اَنْفُسَكُمْ فَتَابَ عَلَيْكُمْ وَعَفَا عَنْكُمْ ۝",
+      "كَمَا يَقُوْمُ الَّذِيْ يَتَخَبَّطُهُ الشَّيْطٰنُ مِنَ الْمَسِّ ۝",
+      "وَمَا لَهُمْ بِهٖ مِنْ عِلْمٍ ۖ اِنْ يَّتَّبِعُوْنَ اِلَّا الظَّنَّ ۝",
+      "فَقَالَ اَنْۢبِئُوْنِيْ بِاَسْمَآءِ هٰٓؤُلَآءِ اِنْ كُنْتُمْ صٰدِقِيْنَ ۝",
+      "قُلِ اللّٰهُمَّ مٰلِكَ الْمُلْكِ تُؤْتِى الْمُلْكَ مَنْ تَشَآءُ ۝",
+      "اِذَا قَضٰٓى اَمْرًا فَاِنَّمَا يَقُوْلُ لَهٗ كُنْ فَيَكُوْنُ ۝"
+    ] },
+  { n:22, title:"Waqof pada tanwin fathah & ta marbuthoh", rule:"Bila waqof, tanwin fathah dibaca \"aa..\" (panjang 2 harokat).",
+    example:{a:"مَآءً", arrow:"⟵", b:"مَآءَا"},
+    lines:[
+      "وَبَثَّ مِنْهُمَا رِجَالًا كَثِيْرًا وَّنِسَآءً ۝",
+      "اَلَّذِيْ يَنْعِقُ بِمَا لَا يَسْمَعُ اِلَّا دُعَآءً وَّنِدَآءً ۝",
+      "قُلْ مَنْ رَّبُّ السَّمٰوٰتِ وَالْاَرْضِ ۗ قُلِ اللّٰهُ ۝",
+      "وَاِذْ قَالَ رَبُّكَ لِلْمَلٰٓئِكَةِ اِنِّيْ جَاعِلٌ فِى الْاَرْضِ خَلِيْفَةً ۝",
+      "فَمَنِ اضْطُرَّ غَيْرَ بَاغٍ وَّلَا عَادٍ فَلَآ اِثْمَ عَلَيْهِ ۝",
+      "اِنَّا مَكَّنَّا لَهٗ فِى الْاَرْضِ وَاٰتَيْنٰهُ مِنْ كُلِّ شَيْءٍ سَبَبًا ۝",
+      "اَلَّذِيْ جَعَلَ لَكُمُ الْاَرْضَ فِرَاشًا وَّالسَّمَآءَ بِنَآءً ۝"
+    ] },
+  { n:23, title:"Waqof pada huruf-huruf bertemu sukun (فَتْحُ)", rule:"Bila waqof, suara \"fat\" ditekan dan diikuti bunyi ح dengan suara rendah.",
+    example:{a:"وَالْفَتْحُ", arrow:"⟵", b:"\"fat-ḥ\""},
+    lines:[
+      "وَالْفَجْرِ ۝ وَلَيَالٍ عَشْرٍ ۝ وَالشَّفْعِ وَالْوَتْرِ ۝",
+      "فَسَبِّحْ بِحَمْدِ رَبِّكَ وَاسْتَغْفِرْهُ ۝ اِنَّهٗ كَانَ تَوَّابًا ۝",
+      "تَكُوْنُ السَّمَآءُ كَالْمُهْلِ ۝ وَتَكُوْنُ الْجِبَالُ كَالْعِهْنِ ۝",
+      "وَالصّٰبِرِيْنَ فِى الْبَأْسَآءِ وَالضَّرَّآءِ وَحِيْنَ الْبَأْسِ ۝",
+      "اَوَلَمْ يَرَوْا اِلَى الطَّيْرِ فَوْقَهُمْ صٰٓفّٰتٍ ۝ وَّيَقْبِضْنَ ۝",
+      "اِعْلَمُوْٓا اَنَّمَا الْحَيٰوةُ الدُّنْيَا لَعِبٌ وَّلَهْوٌ وَّزِيْنَةٌ ۝",
+      "اِصْطَفٰىهُ عَلَيْكُمْ وَزَادَهٗ بَسْطَةً فِى الْعِلْمِ وَالْجِسْمِ ۝"
+    ] },
+  { n:24, title:"Qolqolah pada huruf bertasydid", rule:"Huruf-huruf qolqolah bertasydid bila diwaqofkan: ditekan suaranya, ditahan 2 harokat, diikuti qolqolah.",
+    example:{a:"وَتَبَّ", arrow:"⟵", b:"ditekan + qolqolah"},
+    lines:[
+      "رَبِّ احْكُمْ بِالْحَقِّ ۝",
+      "اَبِيْ لَهَبٍ وَّتَبَّ ۝ مَوَاقِيْتُ لِلنَّاسِ وَالْحَجِّ ۝",
+      "اِعْلَمُوْٓا اَنَّ اللّٰهَ يُحْيِى الْاَرْضَ بَعْدَ مَوْتِهَا ۝",
+      "نَحْنُ نَقُصُّ عَلَيْكَ نَبَاَهُمْ بِالْحَقِّ ۝",
+      "يٰٓاَيُّهَا الَّذِيْنَ اٰمَنُوْا كُوْنُوْا قَوَّامِيْنَ لِلّٰهِ شُهَدَآءَ بِالْقِسْطِ ۝",
+      "وَلَا تَعَاوَنُوْا عَلَى الْاِثْمِ وَالْعُدْوَانِ ۚ وَاتَّقُوا اللّٰهَ ۝",
+      "وَلِيَعْلَمَ اللّٰهُ الَّذِيْنَ اٰمَنُوْا وَيَتَّخِذَ مِنْكُمْ شُهَدَآءَ ۝",
+      "تِلْكَ اٰيٰتُ اللّٰهِ نَتْلُوْهَا عَلَيْكَ بِالْحَقِّ ۝"
+    ] },
+  { n:25, title:"Latihan campuran (ikhfa', iqlab, idghom)", rule:"Gabungan kaidah hukum nun sukun & tanwin dalam ayat-ayat panjang.",
+    lines:[
+      "وَبِالْوَالِدَيْنِ اِحْسَانًا ۝ وَجَبَّارًا شَقِيًّا ۝",
+      "لَهُمْ عَذَابٌ شَدِيْدٌ ۖ وَّاللّٰهُ عَزِيْزٌ ذُو انْتِقَامٍ ۝",
+      "لَا تُفْسِدُوْا فِى الْاَرْضِ ۖ قَالُوْٓا اِنَّمَا نَحْنُ مُصْلِحُوْنَ ۝",
+      "وَكُنْتَ فَظًّا غَلِيْظَ الْقَلْبِ لَانْفَضُّوْا مِنْ حَوْلِكَ ۝",
+      "اَنْفِقُوْا وَتَعَاوَنُوْا عَلَى الْبِرِّ وَالتَّقْوٰى ۝",
+      "وَقُلْ كَذَّبَ الَّذِيْنَ مِنْ قَبْلِهِمْ وَلَا يَحْزُنْكَ ۝",
+      "اِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَاِنَّا لَهٗ لَحٰفِظُوْنَ ۝",
+      "وَمِنْ حَوْلَكُمْ مِّنَ الْاَعْرَابِ مُنٰفِقُوْنَ وَمِنْ اَهْلِ الْمَدِيْنَةِ ۖ مَرَدُوْا عَلَى النِّفَاقِ لَا تَعْلَمُهُمْ ۝"
+    ] },
+  { n:26, title:"Huruf-huruf Awal Surat", rule:"Sebelum EBTA, santri agar dikenalkan dan dibimbing membaca dengan benar huruf-huruf awal surat (fawātih).",
+    grid3:[
+      ["الٓمٓ","الٓمٓصٓ","الٓرٰ"],
+      ["الٓمٓرٰ","كٓهٰيٰعٓصٓ","طٰهٰ"],
+      ["طٰسٓمٓ","طٰسٓ","يٰسٓ"],
+      ["صٓ","حٰمٓ","عٓسٓقٓ"],
+      ["نٓ","",""]
+    ],
+    lines:[
+      "فِيْ قُلُوْبِهِمْ مَّرَضٌ ۙ فَزَادَهُمُ اللّٰهُ مَرَضًا ۝",
+      "وَلَهُمْ عَذَابٌ اَلِيْمٌۢ بِمَا كَانُوْا يَكْذِبُوْنَ ۝",
+      "وَمَا يَأْتِيْهِمْ مِّنْ رَّسُوْلٍ اِلَّا كَانُوْا بِهٖ يَسْتَهْزِءُوْنَ ۝",
+      "لَآ اِكْرَاهَ فِى الدِّيْنِ ۗ قَدْ تَّبَيَّنَ الرُّشْدُ مِنَ الْغَيِّ ۝"
+    ] }
+];
+
+const EBTA_LINES = [
+  "بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ ۝ الٓمٓ ۝",
+  "ذٰلِكَ الْكِتٰبُ لَا رَيْبَ ۛ فِيْهِ ۛ هُدًى لِّلْمُتَّقِيْنَ ۝",
+  "وَلَقَدْ اٰتَيْنَا لُقْمٰنَ الْحِكْمَةَ اَنِ اشْكُرْ لِلّٰهِ ۗ",
+  "وَمَنْ يَّشْكُرْ فَاِنَّمَا يَشْكُرُ لِنَفْسِهٖ ۚ وَمَنْ كَفَرَ فَاِنَّ اللّٰهَ غَنِيٌّ حَمِيْدٌ ۝",
+  "وَاِذْ قَالَ لُقْمٰنُ لِابْنِهٖ وَهُوَ يَعِظُهٗ يٰبُنَيَّ لَا تُشْرِكْ بِاللّٰهِ ۖ اِنَّ الشِّرْكَ لَظُلْمٌ عَظِيْمٌ ۝",
+  "وَوَصَّيْنَا الْاِنْسَانَ بِوَالِدَيْهِ ۚ حَمَلَتْهُ اُمُّهٗ وَهْنًا عَلٰى وَهْنٍ وَّفِصَالُهٗ فِيْ عَامَيْنِ اَنِ اشْكُرْ لِيْ وَلِوَالِدَيْكَ ۗ اِلَيَّ الْمَصِيْرُ ۝",
+  "وَاِنْ جَاهَدٰكَ عَلٰٓى اَنْ تُشْرِكَ بِيْ مَا لَيْسَ لَكَ بِهٖ عِلْمٌ فَلَا تُطِعْهُمَا ۖ وَصَاحِبْهُمَا فِى الدُّنْيَا مَعْرُوْفًا ۗ وَّاتَّبِعْ سَبِيْلَ مَنْ اَنَابَ اِلَيَّ ۚ ثُمَّ اِلَيَّ مَرْجِعُكُمْ فَاُنَبِّئُكُمْ بِمَا كُنْتُمْ تَعْمَلُوْنَ ۝",
+  "يٰبُنَيَّ اَقِمِ الصَّلٰوةَ وَأْمُرْ بِالْمَعْرُوْفِ وَانْهَ عَنِ الْمُنْكَرِ وَاصْبِرْ عَلٰى مَآ اَصَابَكَ ۖ اِنَّ ذٰلِكَ مِنْ عَزْمِ الْاُمُوْرِ ۝",
+  "وَلَا تُصَعِّرْ خَدَّكَ لِلنَّاسِ وَلَا تَمْشِ فِى الْاَرْضِ مَرَحًا ۗ اِنَّ اللّٰهَ لَا يُحِبُّ كُلَّ مُخْتَالٍ فَخُوْرٍ ۝"
+];
+
+const PENUTUP_LINES = [
+  "اٰمَنَ الرَّسُوْلُ بِمَآ اُنْزِلَ اِلَيْهِ مِنْ رَّبِّهٖ وَالْمُؤْمِنُوْنَ ۚ كُلٌّ اٰمَنَ بِاللّٰهِ وَمَلٰٓئِكَتِهٖ وَكُتُبِهٖ وَرُسُلِهٖ ۚ",
+  "لَا نُفَرِّقُ بَيْنَ اَحَدٍ مِّنْ رُّسُلِهٖ ۚ وَقَالُوْا سَمِعْنَا وَاَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَاِلَيْكَ الْمَصِيْرُ ۝",
+  "لَا يُكَلِّفُ اللّٰهُ نَفْسًا اِلَّا وُسْعَهَا ۗ لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ ۗ",
+  "رَبَّنَا لَا تُؤَاخِذْنَآ اِنْ نَّسِيْنَآ اَوْ اَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَآ اِصْرًا كَمَا حَمَلْتَهٗ عَلَى الَّذِيْنَ مِنْ قَبْلِنَا ۚ",
+  "رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهٖ ۚ وَاعْفُ عَنَّا ۗ وَاغْفِرْ لَنَا ۗ وَارْحَمْنَآ ۚ اَنْتَ مَوْلٰىنَا فَانْصُرْنَا عَلَى الْقَوْمِ الْكٰفِرِيْنَ ۝"
+];
+
+const WAQOF_TABLE = [
+  ["مـ","Harus waqof (lazim)","ج","Boleh waqof / terus"],
+  ["قلے","Berhenti lebih utama","صلے","Terus lebih utama"],
+  ["لا","Bukan tempat waqof / terus","ۛ ۛ","Boleh waqof di salah satunya saja"]
+];
+
+const QUIZ = [
+  { q:"Nun sukun / tanwin bertemu ب dibaca...", o:["Idghom bighunnah","Iqlab (suara berubah jadi mim)","Idzhar","Idghom bilaghunnah"], a:1 },
+  { q:"Ikhfa' haqiqi memiliki berapa huruf?", o:["10","12","15","17"], a:2 },
+  { q:"Nun sukun bertemu Wawu (و) atau Ya (ي) dibaca...", o:["Ikhfa'","Idghom bighunnah","Iqlab","Idzhar"], a:1 },
+  { q:"Tanda waqof م (mim kecil) artinya...", o:["Boleh waqof / terus","Harus waqof","Tidak boleh waqof","Terus lebih utama"], a:1 },
+  { q:"Huruf qolqolah bertasydid bila diwaqofkan dibaca...", o:["Langsung qolqolah","Ditekan, ditahan 2 harokat, lalu qolqolah","Dibaca tipis tanpa pantulan","Dibaca panjang 6 harokat"], a:1 },
+  { q:"Waqof pada tanwin fathah (ـً) dibaca...", o:["Sukun","Dengung","Dipanjangkan \"aa..\" 2 harokat","Berubah jadi mim"], a:2 }
+];
+
+const root = document.getElementById('contentRoot');
+const toc = document.getElementById('toc');
+
+function tocLink(id, label, sub){
+  const a = document.createElement('a');
+  a.href = '#'+id; a.dataset.target = id;
+  a.innerHTML = `<span>${label}</span><small>${sub}</small>`;
+  toc.appendChild(a);
+}
+tocLink('cover','Sampul','Iqro\' 6');
+tocLink('petunjuk','Petunjuk','Mengajar');
+
+function arabicGrid(rows, cols){
+  const cls = cols===2 ? 'arabic-grid cols-2' : 'arabic-grid';
+  const cells = rows.flatMap(r=>r.map(c => c ? `<div class="arabic-cell">${c}</div>` : `<div></div>`)).join('');
+  return `<div class="${cls}">${cells}</div>`;
+}
+function arabicLines(lines){
+  return `<div class="arabic-lines">${lines.map(l=>`<div class="arabic-line">${l}</div>`).join('')}</div>`;
+}
+function waqofTable(){
+  return `<table class="waqof-table"><thead><tr><th>Tanda</th><th>Arti</th><th>Tanda</th><th>Arti</th></tr></thead><tbody>${
+    WAQOF_TABLE.map(r=>`<tr><td class="sym">${r[0]}</td><td>${r[1]}</td><td class="sym">${r[2]}</td><td>${r[3]}</td></tr>`).join('')
+  }</tbody></table>`;
+}
+
+PAGES.forEach(p => {
+  const id = 'hal'+p.n;
+  tocLink(id, 'Halaman '+p.n, p.title);
+  const sec = document.createElement('section');
+  sec.className = 'chapter'; sec.id = id;
+  let body = `<span class="pg">Halaman ${p.n}</span><h2>${p.title}</h2>`;
+  if (p.rule) body += `<div class="rule-box"><span class="label">Kaidah</span><div>${p.rule}</div></div>`;
+  if (p.example) body += `<div class="example"><span class="arabic">${p.example.a}</span><span class="arrow">${p.example.arrow}</span><span class="arabic">${p.example.b}</span></div>`;
+  if (p.waqof) body += waqofTable();
+  if (p.grid3) body += arabicGrid(p.grid3, 3);
+  if (p.grid2) body += arabicGrid(p.grid2, 2);
+  if (p.lines) body += arabicLines(p.lines);
+  body += `<div class="tip">Tips: bacalah pelan-pelan dengan tartil. Jika belum lancar, ulangi baris yang sama beberapa kali sebelum lanjut — <em>pelan asal benar</em>.</div>`;
+  sec.innerHTML = body;
+  root.appendChild(sec);
+});
+
+tocLink('ebta','EBTA','Halaman 29–31');
+const ebta = document.createElement('section');
+ebta.className='chapter'; ebta.id='ebta';
+ebta.innerHTML = `<span class="pg">EBTA · Halaman 29–31</span><h2>Evaluasi Akhir Jilid 6 — Surat Luqman</h2>
+<div class="rule-box"><span class="label">Catatan</span><div>EBTA jilid 6 ini tidak mutlak pada halaman EBTA saja. Bila diperlukan boleh memakai halaman lain untuk meyakinkan kemampuan bacaan santri. Bilamana telah benar semuanya barulah di-LULUS-kan.</div></div>
+${arabicLines(EBTA_LINES)}`;
+root.appendChild(ebta);
+
+tocLink('penutup','Penutup','Halaman 32 & Pesan');
+const pen = document.createElement('section');
+pen.className='chapter'; pen.id='penutup';
+pen.innerHTML = `<span class="pg">Halaman 32 · Penutup</span><h2>Latihan Penutup (Akhir Al-Baqarah)</h2>
+${arabicLines(PENUTUP_LINES)}
+<div class="rule-box" style="margin-top:18px"><span class="label">PENTING</span>
+  <ul style="margin:8px 0 0 18px">
+    <li>Bila telah benar semua, syukur lancar: <strong>LULUS</strong>.</li>
+    <li>Bila terpaksa belum lancar tetapi benar semuanya, bisa di-LULUS-kan juga. Insya Allah setelah tadarus beberapa juz akan lancar sendiri.</li>
+    <li>Khusus bacaan Ikhfa', bila belum menguasai betul boleh di-LULUS-kan pula. Insya Allah dikuasai sambil bertadarus.</li>
+    <li>Pelajaran Ilmu Tajwid diberikan setelah bacaan santri <em>LANCAR</em> dan <em>BENAR</em> semuanya.</li>
+  </ul>
+</div>
+<div class="tip"><strong>Selamat!</strong> Setelah lulus jilid 6, langsung tadarus Al-Qur'an mulai juz 1, 2, 3 dan seterusnya — disemak oleh ustadz/ustadzah. — IQRO' 6</div>`;
+root.appendChild(pen);
+
+tocLink('sifat','10 Sifat','Buku Iqro\'');
+const sifat = document.createElement('section');
+sifat.className='chapter'; sifat.id='sifat';
+sifat.innerHTML = `<span class="pg">10 Sifat Buku Iqro'</span><h2>10 Sifat Buku Iqro'</h2>
+<ol style="columns:2;column-gap:30px;line-height:2">
+  <li>Bacaan Langsung</li>
+  <li>CBSA (Cara Belajar Santri Aktif)</li>
+  <li>Privat / Klasikal</li>
+  <li>Modul</li>
+  <li>Asistensi</li>
+  <li>Praktis</li>
+  <li>Sistematis</li>
+  <li>Variatif</li>
+  <li>Komunikatif</li>
+  <li>Fleksibel</li>
+</ol>
+<p class="footer-note">Penerbit Tunggal: Team Tadarus "AMM" Kotagede Yogyakarta.</p>`;
+root.appendChild(sifat);
+
+tocLink('kuis','Kuis','6 soal tajwid');
+const quiz = document.createElement('section');
+quiz.className='chapter'; quiz.id='kuis';
+quiz.innerHTML = `<span class="pg">Kuis</span><h2>Kuis Singkat Jilid 6</h2>
+<p class="muted">Jawab 6 pertanyaan untuk mengukur pemahaman kaidah tajwid praktis pada jilid ini.</p>
+<div id="quizBox"></div>
+<div class="quiz-controls"><button class="primary-btn" id="quizSubmit">Cek Jawaban</button><button class="ghost-btn" id="quizReset">Ulangi</button><div class="score" id="quizScore"></div></div>`;
+root.appendChild(quiz);
+
+const quizBox = quiz.querySelector('#quizBox');
+function renderQuiz(){
+  quizBox.innerHTML = QUIZ.map((it,i)=>`
+    <div class="quiz-panel" data-i="${i}" style="margin-bottom:12px">
+      <strong>Soal ${i+1}.</strong>
+      <p class="quiz-q">${it.q}</p>
+      <div class="quiz-options">${it.o.map((op,j)=>`<button class="quiz-opt" data-j="${j}">${op}</button>`).join('')}</div>
+    </div>`).join('');
+  quizBox.querySelectorAll('.quiz-panel').forEach(panel=>{
+    panel.querySelectorAll('.quiz-opt').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        panel.querySelectorAll('.quiz-opt').forEach(b=>b.classList.remove('selected'));
+        btn.classList.add('selected');
+      });
+    });
+  });
+}
+renderQuiz();
+quiz.querySelector('#quizSubmit').addEventListener('click', ()=>{
+  let score = 0;
+  quizBox.querySelectorAll('.quiz-panel').forEach(panel=>{
+    const i = +panel.dataset.i;
+    const sel = panel.querySelector('.quiz-opt.selected');
+    panel.querySelectorAll('.quiz-opt').forEach((b,j)=>{
+      b.classList.remove('correct','wrong');
+      if (j===QUIZ[i].a) b.classList.add('correct');
+      if (sel && b===sel && j!==QUIZ[i].a) b.classList.add('wrong');
+    });
+    if (sel && +sel.dataset.j === QUIZ[i].a) score++;
+  });
+  document.getElementById('quizScore').textContent = `${score}/${QUIZ.length}`;
+});
+quiz.querySelector('#quizReset').addEventListener('click', ()=>{ renderQuiz(); document.getElementById('quizScore').textContent=''; });
+
+const themeToggle = document.getElementById('themeToggle');
+if (localStorage.getItem('iqro6-theme')==='dark'){ document.body.classList.add('dark'); themeToggle.setAttribute('aria-pressed','true'); }
+themeToggle.addEventListener('click', ()=>{
+  document.body.classList.toggle('dark');
+  const on = document.body.classList.contains('dark');
+  themeToggle.setAttribute('aria-pressed', on);
+  localStorage.setItem('iqro6-theme', on?'dark':'light');
+});
+
+document.getElementById('sidebarToggle')?.addEventListener('click', ()=>document.body.classList.toggle('sidebar-open'));
+document.getElementById('scrim').addEventListener('click', ()=>document.body.classList.remove('sidebar-open'));
+
+const sections = () => [...document.querySelectorAll('.chapter')];
+function updateProgress(){
+  const scrolled = window.scrollY;
+  const total = document.body.scrollHeight - window.innerHeight;
+  const pct = Math.min(100, Math.max(0, Math.round(scrolled/total*100)));
+  document.getElementById('progressFill').style.width = pct+'%';
+  document.getElementById('progressText').textContent = pct+'%';
+  document.getElementById('readingBar').style.width = pct+'%';
+  let current = sections()[0]?.id;
+  sections().forEach(s=>{ if (s.getBoundingClientRect().top < 140) current = s.id; });
+  toc.querySelectorAll('a').forEach(a=>a.classList.toggle('active', a.dataset.target===current));
+}
+window.addEventListener('scroll', updateProgress, {passive:true});
+updateProgress();
+
+const note = document.getElementById('noteField');
+note.value = localStorage.getItem('iqro6-note') || '';
+note.addEventListener('input', ()=>{ localStorage.setItem('iqro6-note', note.value); document.getElementById('noteStatus').textContent='Tersimpan ✓'; });
+document.getElementById('clearNote').addEventListener('click', ()=>{ note.value=''; localStorage.removeItem('iqro6-note'); document.getElementById('noteStatus').textContent='Catatan kosong.'; });
+
+document.getElementById('saveBookmark').addEventListener('click', ()=>{
+  let current = sections()[0].id;
+  sections().forEach(s=>{ if (s.getBoundingClientRect().top < 140) current = s.id; });
+  localStorage.setItem('iqro6-bookmark', current);
+  document.getElementById('noteStatus').textContent = 'Bookmark: '+current;
+});
+document.getElementById('jumpBookmark').addEventListener('click', ()=>{
+  const b = localStorage.getItem('iqro6-bookmark');
+  if (b) document.getElementById(b)?.scrollIntoView({behavior:'smooth'});
+});
+document.getElementById('openBookmarkList').addEventListener('click', ()=>{
+  const b = localStorage.getItem('iqro6-bookmark');
+  alert(b ? ('Bookmark tersimpan: '+b) : 'Belum ada bookmark. Klik tombol "Bookmark" pada sidebar untuk menyimpan.');
+});
+
+document.getElementById('startReading').addEventListener('click', ()=>document.getElementById('hal1').scrollIntoView({behavior:'smooth'}));
+
+const search = document.getElementById('searchBox');
+const searchResults = document.getElementById('searchResults');
+search.addEventListener('input', ()=>{
+  const q = search.value.trim().toLowerCase();
+  if (!q){ searchResults.textContent='Ketik untuk mencari materi.'; return; }
+  let hits = 0;
+  sections().forEach(sec=>{ if (sec.textContent.toLowerCase().includes(q)) hits++; });
+  searchResults.textContent = hits ? `${hits} halaman cocok. Tekan Enter untuk lompat.` : 'Tidak ditemukan.';
+});
+search.addEventListener('keydown', e=>{
+  if (e.key==='Enter'){
+    const q = search.value.trim().toLowerCase();
+    if (!q) return;
+    const found = sections().find(s=>s.textContent.toLowerCase().includes(q));
+    if (found) found.scrollIntoView({behavior:'smooth'});
+  }
+});
+
+toc.addEventListener('click', e=>{ if (e.target.closest('a')) document.body.classList.remove('sidebar-open'); });
+</script>
+</body>
+</html>

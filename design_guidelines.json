@@ -1,0 +1,108 @@
+{
+  "theme_archetype": "Archetype 1: Organic & Earthy (Light Theme)",
+  "rationale": "An Islamic educational platform for children requires warmth, trust, and clarity. Using a warm sand base with deep emerald and terracotta accents provides a calm, grounded environment that perfectly complements the existing interactive HTML materials without resorting to cliche templates.",
+  "colors": {
+    "background": "#FDFBF7",
+    "surface_primary": "#FFFFFF",
+    "surface_secondary": "#F4F1EA",
+    "surface_glass": "bg-white/70 backdrop-blur-xl border border-white/40",
+    "primary": "#064E3B",
+    "primary_hover": "#043B2C",
+    "accent_terracotta": "#D97757",
+    "accent_gold": "#D4AF37",
+    "text_primary": "#1C1917",
+    "text_secondary": "#57534E",
+    "border_subtle": "#E7E5DF",
+    "status_locked": "#A8A29E",
+    "status_active": "#064E3B"
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Fraunces, serif",
+      "body": "Manrope, sans-serif",
+      "arabic": "Amiri, serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "hierarchy": {
+      "h1": "text-5xl lg:text-6xl tracking-tight font-medium leading-none",
+      "h2": "text-3xl lg:text-4xl tracking-tight font-medium",
+      "h3": "text-xl lg:text-2xl font-medium",
+      "body": "text-base leading-relaxed text-stone-800",
+      "arabic_large": "text-4xl lg:text-5xl leading-loose font-arabic text-emerald-900",
+      "label_overline": "text-xs uppercase tracking-[0.2em] font-bold text-stone-500"
+    }
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous Spacing (p-8, p-12) to give the interface an elegant, uncrowded feel.",
+    "grid_system": "Bento Grid Protocol - Mode A (Tetris) for Landing. Mode B (Control Room) for User/Admin Dashboard.",
+    "container_padding": "px-6 md:px-12 lg:px-24 py-12 lg:py-24"
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#064E3B] text-white rounded-2xl px-6 py-3 font-medium hover:bg-[#043B2C] transition-colors shadow-sm",
+      "secondary": "bg-[#F4F1EA] text-[#1C1917] rounded-2xl px-6 py-3 font-medium hover:bg-[#E7E5DF] transition-colors",
+      "accent": "bg-[#D97757] text-white rounded-2xl px-6 py-3 font-medium hover:bg-[#C26244] transition-colors shadow-sm"
+    },
+    "cards": {
+      "default": "bg-white rounded-3xl border border-[#E7E5DF] shadow-[0_8px_30px_rgba(0,0,0,0.04)] p-8",
+      "bento_item": "bg-[#F4F1EA] rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative",
+      "locked_item": "bg-[#F4F1EA] opacity-70 grayscale-[50%] rounded-3xl p-8 border border-dashed border-[#A8A29E]"
+    },
+    "navbar": "Sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-white/40 px-6 py-4 flex justify-between items-center"
+  },
+  "pages_blueprints": {
+    "landing_home": {
+      "layout": "Asymmetric bento grid hero. Large welcoming H1, staggered image cards.",
+      "features": "Hero with elegant Arabic Bismillah overlay, stats bento box, floating geometric patterns."
+    },
+    "auth": {
+      "layout": "50/50 Split Screen.",
+      "left": "Sticky image panel with warm lighting and soft overlay.",
+      "right": "Clean centered form with soft inputs (Shadcn customized)."
+    },
+    "library_iqro_1_to_6": {
+      "layout": "Grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8.",
+      "styling": "Iqro 1-4 use 'locked_item' styling with lock icons and 'Coming Soon' overlay. Iqro 5-6 are highly vibrant 'cards' with primary CTAs to 'Lanjut Belajar' (Continue Learning).",
+      "interaction": "Hover effects on active cards (-translate-y-1, increased shadow)."
+    },
+    "material_viewer": {
+      "layout": "Full viewport height wrapper.",
+      "topbar": "Minimal glassmorphism nav with 'Back to Library' and current volume title.",
+      "content": "Iframe container scaling dynamically. Background matching the HTML file's palette to feel seamless."
+    },
+    "user_dashboard": {
+      "layout": "Control Room Grid (Mode B).",
+      "widgets": "Progress doughnut chart (accent terracotta/gold), recent activity list, comments/discussions summary."
+    },
+    "admin_panel": {
+      "layout": "Sidebar navigation + Content Area. Dense list views.",
+      "styling": "Crisp borders, white background, Shadcn data tables for material management and user tracking."
+    }
+  },
+  "media_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1739478469935-65b0ac94355c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwzfHxpc2xhbWljJTIwZ2VvbWV0cmljJTIwcGF0dGVybiUyMGJhY2tncm91bmQlMjBzZWFtbGVzc3xlbnwwfHx8fDE3ODE0MDM2Mjh8MA&ixlib=rb-4.1.0&q=85",
+      "usage": "Use as a very low opacity (5-10%) background texture for the hero section or auth screen left panel to add subtle Islamic geometry."
+    },
+    "hero_image": {
+      "url": "https://images.unsplash.com/photo-1599689868384-59cb2b01bb21?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwxfHxjaGlsZCUyMHJlYWRpbmclMjBib29rJTIwaGFwcHklMjB3YXJtJTIwbGlnaHR8ZW58MHx8fHwxNzgxNDAzNjI4fDA&ixlib=rb-4.1.0&q=85",
+      "usage": "Use in the hero bento grid as the main lifestyle image representing focused learning."
+    },
+    "library_placeholder": {
+      "url": "https://images.unsplash.com/photo-1725007995235-6979cb34ff8e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwzfHxxdXJhbiUyMG9wZW4lMjBiZWF1dGlmdWwlMjBsaWdodGluZ3xlbnwwfHx8fDE3ODE0MDM2Mjh8MA&ixlib=rb-4.1.0&q=85",
+      "usage": "Use as thumbnail covers for the Iqro volumes in the library grid if custom graphics are not available."
+    }
+  },
+  "testing_and_accessibility": {
+    "data_testid_rules": "All interactive elements (buttons, inputs, tabs, cards) MUST have a kebab-case data-testid (e.g., 'login-submit-button', 'iqro-5-card', 'admin-upload-html').",
+    "contrast": "Ensure text over geometric backgrounds has sufficient contrast (use text-shadow or backdrop-blur under text)."
+  },
+  "instructions_to_main_agent": [
+    "Install Google Fonts for Fraunces, Manrope, and Amiri. Configure them in tailwind.config.js.",
+    "Do NOT use HTML native datepickers or selects. Use Shadcn components and customize them with the soft rounded-2xl styles.",
+    "Build the bento grids using direct children of grid containers. Avoid wrapper divs that break grid flow.",
+    "Ensure the Material Viewer iframe handles the provided HTML files gracefully. The iframe should take up maximal available space below the header.",
+    "For the library placeholders (Iqro 1-4), make sure they look visually distinct (locked/disabled) from the active Iqro 5 & 6.",
+    "Do not use generic blue/purple colors. Stick strictly to the defined deep emerald, terracotta, and warm gold."
+  ]
+}
