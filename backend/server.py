@@ -144,6 +144,7 @@ class MaterialUpdate(BaseModel):
 
 class MaterialSummary(BaseModel):
     id: str
+    category: str = "iqro"
     volume: int
     title: str
     description: str
