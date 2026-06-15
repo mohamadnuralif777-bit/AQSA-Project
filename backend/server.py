@@ -126,6 +126,7 @@ class UserOut(BaseModel):
 
 
 class MaterialIn(BaseModel):
+    category: str = "iqro"
     volume: int = Field(ge=1, le=20)
     title: str
     description: Optional[str] = ""
@@ -134,6 +135,7 @@ class MaterialIn(BaseModel):
 
 
 class MaterialUpdate(BaseModel):
+    category: Optional[str] = None
     title: Optional[str] = None
     description: Optional[str] = None
     html_content: Optional[str] = None
